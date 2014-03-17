@@ -56,6 +56,9 @@ GEM
     colored (1.2)
     connection_pool (1.2.0)
     daemons (1.1.9)
+    dotenv (0.10.0)
+    dotenv-rails (0.10.0)
+      dotenv (= 0.10.0)
     ember-data-source (0.14)
       ember-source
     ember-rails (0.14.1)
@@ -186,6 +189,7 @@ DEPENDENCIES
   awesome_print
   coffee-rails (~> 4.0.0)
   colored
+  dotenv-rails
   ember-rails
   ember-source (= 1.4.0)
   haml-rails
