@@ -13,6 +13,7 @@ gem 'ember-rails'
 gem 'ember-source', '1.4.0'
 gem 'thin', '>= 1.6.2'
 gem 'haml-rails'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'colored'
