@@ -22,3 +22,7 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
+# authentication
+gem 'omniauth', '>= 1.2.1'
+gem 'omniauth-github', '>= 1.1.1'
