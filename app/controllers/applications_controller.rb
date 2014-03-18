@@ -2,7 +2,7 @@ class ApplicationsController < ApplicationController
   respond_to :html, :json
 
   def index
-    respond_with(Application.limit(20))
+    render json: Application.all, each_serializer: ApplicationBriefSerializer
   end
 
   def show
