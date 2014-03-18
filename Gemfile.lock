@@ -201,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   awesome_print
   better_errors
   binding_of_caller

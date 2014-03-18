@@ -14,6 +14,7 @@ gem 'ember-source', '1.4.0'
 gem 'thin', '>= 1.6.2'
 gem 'haml-rails'
 gem 'pry-rails'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'colored'
