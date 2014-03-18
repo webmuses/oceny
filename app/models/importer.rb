@@ -22,6 +22,7 @@ class Importer
     id, name, email, age, place, experience, level, system, reason, *other = line.split(/[\t\r\n]/)
 
     {
+      id: id,
       name: name,
       email: email,
       age: age,
