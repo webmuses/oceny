@@ -4,8 +4,8 @@
 #= require ember
 #= require ember-data
 #= require_self
-#= require oceny
+#= require app
 
 # for more details see: http://emberjs.com/guides/application/
-window.Oceny = Ember.Application.create()
+window.App = Ember.Application.create()
 
