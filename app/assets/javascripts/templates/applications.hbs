@@ -29,4 +29,10 @@
   </tr>
 </table>
 
+<form action='/applications/upload' method='post' enctype="multipart/form-data" accept-charset="UTF-8">
+  <input type='file' name='file'>
+  <input type='submit' value='Prześlij'>
+</form>
+
+
 {{#link-to 'dashboard'}}Dashboard{{/link-to}}
