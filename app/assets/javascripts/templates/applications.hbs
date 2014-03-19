@@ -34,5 +34,10 @@
   <input type='submit' value='Prześlij'>
 </form>
 
+<ul>
+  {{#each applications}}
+    <li>{{name}}</li>
+  {{/each}}
+</ul>
 
 {{#link-to 'dashboard'}}Dashboard{{/link-to}}

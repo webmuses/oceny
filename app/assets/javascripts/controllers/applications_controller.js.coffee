@@ -1,1 +1,1 @@
-App.ApplicationsController = Ember.ArrayController.extend({})
+App.ApplicationsController = Ember.ObjectController.extend()
