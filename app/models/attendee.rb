@@ -4,6 +4,8 @@ class Attendee
 
   field :_id, type: Integer
 
+  has_many :rates
+
   def next
     self.class.where(:id.gt => id).order(:id.asc).first
   end
