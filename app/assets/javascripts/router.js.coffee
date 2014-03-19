@@ -3,5 +3,5 @@
 App.Router.map ()->
   @route('dashboard', path: '/')
   @route('about')
-  @route('applications')
+  @route('attendees')
 

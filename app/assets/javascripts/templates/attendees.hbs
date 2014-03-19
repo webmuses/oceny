@@ -1,4 +1,4 @@
-<table class='applications'>
+<table class='attendees'>
   <tr>
     <th>Imię i nazwisko</th>
     <td></td>
@@ -29,13 +29,13 @@
   </tr>
 </table>
 
-<form action='/applications/upload' method='post' enctype="multipart/form-data" accept-charset="UTF-8">
+<form action='/attendees/upload' method='post' enctype="multipart/form-data" accept-charset="UTF-8">
   <input type='file' name='file'>
   <input type='submit' value='Prześlij'>
 </form>
 
 <ul>
-  {{#each applications}}
+  {{#each attendees}}
     <li>{{name}}</li>
   {{/each}}
 </ul>
