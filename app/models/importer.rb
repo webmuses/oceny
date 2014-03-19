@@ -13,7 +13,7 @@ class Importer
   end
 
   def applications
-    header, *lines = file.read.lines
+    header1, header2, *lines = file.read.lines
 
     lines.map{|line| extract_data(line)}
   end
