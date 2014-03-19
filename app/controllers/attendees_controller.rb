@@ -2,7 +2,7 @@ class AttendeesController < ApplicationController
   respond_to :html, :json
 
   def index
-    render json: Attendee.all, each_serializer: AttendeeEachSerializer
+    render json: Attendee.order(:id.asc), each_serializer: AttendeeEachSerializer
   end
 
   def show
