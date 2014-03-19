@@ -6,7 +6,7 @@ class AttendeesController < ApplicationController
   end
 
   def show
-    respond_with(Attendee.find(params[:id]))
+    render json: Attendee.find(params[:id]), serializer: AttendeeSingleSerializer
   end
 
   def upload
