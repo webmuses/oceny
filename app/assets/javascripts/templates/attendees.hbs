@@ -35,8 +35,8 @@
 </form>
 
 <ul>
-  {{#each attendees}}
-    <li>{{name}}</li>
+  {{#each attendee in attendees}}
+    <li>{{#link-to 'attendee' attendee}}{{attendee.name}}{{/link-to}}</a></li>
   {{/each}}
 </ul>
 
