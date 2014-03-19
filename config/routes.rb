@@ -1,7 +1,7 @@
 Oceny::Application.routes.draw do
   root 'dashboard#index'
 
-  resources :attendees, only: [:index] do
+  resources :attendees, only: [:index, :show] do
     post :upload, on: :collection
     post :rate, on: :member
   end
