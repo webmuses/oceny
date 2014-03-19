@@ -19,7 +19,7 @@ class Importer
   end
 
   def extract_data(line)
-    id, name, email, age, place, experience, level, system, reason, *other = line.split(/[\t\r\n]/)
+    id, name, email, age, place, experience, level, os, reason, *other = line.split(/[\t\r\n]/)
 
     {
       id: id,
@@ -29,7 +29,7 @@ class Importer
       place: place,
       experience: experience,
       level: level,
-      system: system,
+      os: os,
       reason: reason
     }
   end
