@@ -2,6 +2,17 @@
 
 {{#link-to "attendee" next_id}} następne {{/link-to}}
 
+<p>
+  <button {{action 'rate' model 5}}>5</button>
+  <button {{action 'rate' model 4}}>4</button>
+  <button {{action 'rate' model 3}}>3</button>
+  <button {{action 'rate' model 2}}>2</button>
+  <button {{action 'rate' model 1}}>1</button>
+  <button {{action 'rate' model 0}}>0</button>
+</p>
+
 {{partial "attendee"}}
 
-{{#link-to 'attendees'}}Zgłoszenia{{/link-to}}
+<p>
+  {{#link-to 'attendees'}}Zgłoszenia{{/link-to}}
+</p>
