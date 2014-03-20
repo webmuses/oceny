@@ -8,7 +8,9 @@
 <div>
   <ul>
     {{#each attendee in attendees}}
-      <li>{{#link-to 'attendee' attendee}}{{attendee.name}}{{/link-to}}</a></li>
+      <li>
+        {{attendee_link attendee}}
+      </li>
     {{/each}}
   </ul>
 </div>

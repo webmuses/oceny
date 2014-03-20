@@ -1,3 +1,3 @@
-class AttendeeEachSerializer < AttendeeSingleSerializer
-  self.root = true
+class AttendeeEachSerializer < ActiveModel::Serializer
+  attributes :id, :name
 end
