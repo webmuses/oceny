@@ -1,3 +1,32 @@
+h1, h2, h3, a {
+  font-family: 'Lato';
+}
+
+.button {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background: #1cbcaf;
+
+  &:hover {
+    background: black;
+  }
+}
+
+.prev {
+  border-right: 1px solid black;
+}
+
+.next {
+  border-left: 1px solid black;
+}
+
+.bottom {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 table.attendees {
   border-collapse: collapse;
   width: 100%;

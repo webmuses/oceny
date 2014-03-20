@@ -1,6 +1,6 @@
-{{#link-to "attendee" prev_id}} poprzednie {{/link-to}}
+{{#link-to "attendee" prev_id class='button prev'}} poprzednie {{/link-to}}
 
-{{#link-to "attendee" next_id}} następne {{/link-to}}
+{{#link-to "attendee" next_id class='button next'}} następne {{/link-to}}
 
 <p>
   <button {{action 'rate' model 5}}>5</button>
@@ -14,5 +14,5 @@
 {{partial "attendee"}}
 
 <p>
-  {{#link-to 'attendees'}}Zgłoszenia{{/link-to}}
+  {{#link-to 'attendees' class='button'}}Wróć do listy zgłoszeń{{/link-to}}
 </p>
