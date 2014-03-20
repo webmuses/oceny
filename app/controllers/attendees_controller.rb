@@ -1,4 +1,6 @@
 class AttendeesController < ApplicationController
+  skip_before_action :authenticate, only: [:upload]
+
   respond_to :html, :json
 
   def index
