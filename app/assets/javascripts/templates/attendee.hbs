@@ -11,6 +11,14 @@
   <button class='rate' {{action 'rate' model 0}} data-value='0'>0</button>
 </p>
 
+<h2>Oceny</h2>
+
+<ul>
+  {{#each rate in rates}}
+    <li>{{rate.nickname}}: {{rate.value}}</li>
+  {{/each}}
+</ul>
+
 {{partial "attendee"}}
 
 <p>
