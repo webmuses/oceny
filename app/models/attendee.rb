@@ -7,10 +7,10 @@ class Attendee
   has_many :rates
 
   def next
-    self.class.where(:id.gt => id).order(:id.asc).first
+    self.class.where(:age.gte => age).order(:age.asc).first
   end
 
   def prev
-    self.class.where(:id.lt => id).order(:id.desc).first
+    self.class.where(:age.lte => age).order(:age.desc).first
   end
 end

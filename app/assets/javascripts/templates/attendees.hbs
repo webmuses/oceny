@@ -6,13 +6,13 @@
 </div>
 
 <div>
-  <ul>
+  <ol>
     {{#each attendee in attendees}}
       <li>
-        {{attendee_link attendee}}
+        {{attendee_link attendee}}, wiek: {{attendee.age}}
       </li>
     {{/each}}
-  </ul>
+  </ol>
 </div>
 
 <div class='bottom'>
