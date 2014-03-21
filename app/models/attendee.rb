@@ -7,10 +7,18 @@ class Attendee
   has_many :rates
 
   def next
-    self.class.where(:age.gte => age).order(:age.asc).first
+    list[position + 1]
   end
 
   def prev
-    self.class.where(:age.lte => age).order(:age.desc).first
+    list[position - 1]
+  end
+
+  def position
+    list.index{|attendee| attendee.id == id}
+  end
+
+  def list
+    @list ||= self.class.order(:age.asc, :id.asc).to_a
   end
 end
