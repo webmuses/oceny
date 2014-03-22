@@ -14,6 +14,9 @@
   <button class='rate' {{action 'rate' model 1}} data-value='1'>1</button>
   <button class='rate' {{action 'rate' model 0}} data-value='0'>0</button>
 </p>
+
+<p>Średnia ocen: {{average_rate}}</p>
+
 {{#if rates}}
   <ul>
     {{#each rate in rates}}
