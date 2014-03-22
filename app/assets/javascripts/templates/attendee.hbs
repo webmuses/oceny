@@ -1,32 +1,12 @@
-{{partial "attendee"}}
+<div class='attendee'>
+  {{partial "attendee"}}
+</div>
 
-{{#link-to "attendee" prev_id id='prev' class='button prev'}} poprzednie {{/link-to}}
+<div class='navigation'>
+  {{#link-to "attendee" prev_id id='prev' class='button prev'}} poprzednie zgłoszenie {{/link-to}}
+  {{#link-to "attendee" next_id id='next' class='button next'}} następne zgłoszenie {{/link-to}}
+</div>
 
-{{#link-to "attendee" next_id id='next' class='button next'}} następne {{/link-to}}
-
-<h2>Oceny</h2>
-
-<p>
-  <button class='rate' {{action 'rate' model 5}} data-value='5'>5</button>
-  <button class='rate' {{action 'rate' model 4}} data-value='4'>4</button>
-  <button class='rate' {{action 'rate' model 3}} data-value='3'>3</button>
-  <button class='rate' {{action 'rate' model 2}} data-value='2'>2</button>
-  <button class='rate' {{action 'rate' model 1}} data-value='1'>1</button>
-  <button class='rate' {{action 'rate' model 0}} data-value='0'>0</button>
-</p>
-
-<p>Średnia ocen: {{average_rate}}</p>
-
-{{#if rates}}
-  <ul>
-    {{#each rate in rates}}
-      <li>{{rate.nickname}}: {{rate.value}}</li>
-    {{/each}}
-  </ul>
-{{else}}
-  Brak ocen.
-{{/if}}
-
-<p>
-  {{#link-to 'attendees' class='button'}}Wróć do listy zgłoszeń{{/link-to}}
-</p>
+<div class='rating'>
+  {{partial "rating"}}
+</div>

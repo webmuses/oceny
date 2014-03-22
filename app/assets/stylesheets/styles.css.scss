@@ -46,7 +46,25 @@ button.rate.active {
   padding-bottom: 50px;
 }
 
-table.attendees {
+.attendee {
+  float: left;
+  width: 560px;
+  margin-right: 20px;
+}
+
+.rating {
+  float: left;
+  width: 380px;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  float: left;
+  width: 380px;
+  margin: 20px 0;
+}
+
+.attendee table{
   border-collapse: collapse;
   width: 100%;
   border-bottom: 1px solid #eee;
