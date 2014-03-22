@@ -14,6 +14,7 @@ gem 'ember-source', '1.4.0'
 gem 'thin', '>= 1.6.2'
 gem 'pry-rails'
 gem 'active_model_serializers'
+gem 'draper', '>= 1.3.0'
 
 group :development, :test do
   gem 'colored'
