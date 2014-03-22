@@ -14,7 +14,7 @@ class AttendeesController < ApplicationController
   def upload
     Importer.new(params[:file], Attendee).import
 
-    redirect_to '#/attendees'
+    redirect_to root_path
   end
 
   def rate
