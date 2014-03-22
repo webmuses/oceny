@@ -7,14 +7,14 @@ class AttendeeSingleSerializer < ActiveModel::Serializer
   has_many :rates
 
   def prev_id
-    object.prev.try(:id)
+    object.decorate.prev.try(:id)
   end
 
   def next_id
-    object.next.try(:id)
+    object.decorate.next.try(:id)
   end
 
   def average_rate
-    object.rates.map(&:value).reduce(:+)
+    object.decorate.rates.map(&:value).reduce(:+)
   end
 end
