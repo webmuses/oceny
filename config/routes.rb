@@ -3,8 +3,10 @@ Oceny::Application.routes.draw do
 
   resources :attendees, only: [:index, :show] do
     post :upload, on: :collection
-    post :rate, on: :member
+
+    resources :rates, only: [:create]
   end
+
   get '/results' => 'results#index'
 
   # sessions

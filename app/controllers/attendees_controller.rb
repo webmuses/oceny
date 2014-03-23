@@ -16,17 +16,4 @@ class AttendeesController < ApplicationController
 
     redirect_to root_path
   end
-
-  def rate
-    attendee = Attendee.find(params[:id])
-
-    rate = Rate.find_or_create_by({
-      user: current_user,
-      attendee: attendee,
-      nickname: current_user.nickname
-    })
-    rate.update_attribute(:value, params[:value])
-
-    render json: rate
-  end
 end

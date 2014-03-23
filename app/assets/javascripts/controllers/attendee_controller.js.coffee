@@ -4,7 +4,7 @@ App.AttendeeController = Ember.ObjectController.extend
 
   actions:
     rate: (model, value) =>
-      Ember.$.post("/attendees/#{model.id}/rate", value: value, =>
+      Ember.$.post("/attendees/#{model.id}/rates", value: value, =>
         $('button.rate').removeClass('active')
         $("[data-value=#{value}]").addClass('active')
       )
