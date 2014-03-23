@@ -19,8 +19,7 @@ class AttendeeSingleSerializer < ActiveModel::Serializer
   end
 
   def average_rate
-    _rates = rates.map(&:value)
-    _rates.reduce(0.0, :+) / _rates.count
+    decorated.average_rate
   end
 
   private

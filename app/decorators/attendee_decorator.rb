@@ -3,6 +3,11 @@ class AttendeeDecorator < Draper::Decorator
 
   delegate_all
 
+  def average_rate
+    @rates = object.rates.map(&:value)
+    @rates.reduce(0.0, :+) / @rates.count
+  end
+
   def next
     list[position + 1]
   end

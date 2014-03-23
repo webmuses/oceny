@@ -1,0 +1,12 @@
+<h1>Wyniki</h1>
+
+<div>
+  <ol>
+    {{#each attendee in results}}
+      <li>
+        {{attendee_link attendee}}, wiek: {{attendee.age}}
+      </li>
+    {{/each}}
+  </ol>
+</div>
+

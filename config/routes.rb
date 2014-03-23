@@ -5,6 +5,7 @@ Oceny::Application.routes.draw do
     post :upload, on: :collection
     post :rate, on: :member
   end
+  get '/results' => 'results#index'
 
   # sessions
   get '/auth/:provider/callback', to: 'sessions#create'
