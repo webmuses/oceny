@@ -3,8 +3,10 @@ App.AttendeeController = Ember.ObjectController.extend
     controller.set('model', attendee)
 
   actions:
-    rate: (model, value) =>
-      Ember.$.post("/attendees/#{model.id}/rates", value: value, =>
-        $('button.rate').removeClass('active')
-        $("[data-value=#{value}]").addClass('active')
-      )
+    rate: (model, value) ->
+      Ember.$
+        .when(Ember.$.post("/attendees/#{model.id}/rates", value: value))
+        .then(Ember.$.get("/attendees/#{model.id}", (data) ->
+          Ember.set(model, 'rates', data.rates)
+          Ember.set(model, 'average_rate', data.average_rate)
+      ))
