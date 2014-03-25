@@ -5,6 +5,7 @@ class AttendeeSingleSerializer < ActiveModel::Serializer
     :position, :prev_id, :next_id, :average_rate
 
   has_many :rates
+  has_many :comments
 
   def position
     decorated.position + 1

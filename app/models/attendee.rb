@@ -5,4 +5,5 @@ class Attendee
   field :_id, type: Integer
 
   has_many :rates
+  has_many :comments
 end
