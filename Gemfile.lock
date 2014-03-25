@@ -108,6 +108,8 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
+    momentjs-rails (2.5.1)
+      railties (>= 3.1)
     moped (2.0.0.beta6)
       bson (~> 2.2)
       connection_pool (~> 1.2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   ember-source (= 1.4.0)
   jbuilder (~> 1.2)
   jquery-rails
+  momentjs-rails
   mongoid!
   omniauth (>= 1.2.1)
   omniauth-github (>= 1.1.1)
