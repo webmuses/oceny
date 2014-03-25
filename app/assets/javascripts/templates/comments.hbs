@@ -1,0 +1,21 @@
+<h2>Komentarze</h2>
+
+<form id='comment'>
+  <textarea id='body'></textarea>
+  <button {{action 'comment' model}}>Dodaj</button>
+  <div class="clear"></div>
+</form>
+
+{{#if comments}}
+  <ul>
+    {{#each comment in comments}}
+      <li>
+        <strong>{{comment.nickname}}</strong>
+        <span class='date'>{{commentDate comment}}</span><br />
+        {{comment.body}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>Brak komentarzy.</p>
+{{/if}}

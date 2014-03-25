@@ -5,6 +5,7 @@ Oceny::Application.routes.draw do
     post :upload, on: :collection
 
     resources :rates, only: [:create]
+    resources :comments, only: [:create]
   end
 
   get '/results' => 'results#index'
