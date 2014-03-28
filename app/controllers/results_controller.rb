@@ -3,6 +3,9 @@ class ResultsController < ApplicationController
     attendees = AttendeeDecorator.decorate_collection(Attendee.includes(:rates).all)
     results = AttendeeSelector.new(attendees).select!
 
-    render json: results, each_serializer: AttendeeSingleSerializer
+    respond_to do |format|
+      format.json { render json: results, each_serializer: AttendeeSingleSerializer }
+      format.text { send_data TextExporter.new(results, Attendee.attribute_names).generate }
+    end
   end
 end
