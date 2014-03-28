@@ -22,6 +22,8 @@ h1, h2, h3, a, p {
   font-weight: bold;
   text-decoration: none;
   background: #1cbcaf;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background: black;
