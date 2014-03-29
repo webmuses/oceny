@@ -5,7 +5,11 @@ class AttendeeDecorator < Draper::Decorator
 
   def average_rate
     @rates = object.rates.map(&:value)
-    @rates.reduce(0.0, :+) / @rates.count
+    if @rates.present?
+      @rates.reduce(0.0, :+) / @rates.count
+    else
+      0.0
+    end
   end
 
   def next

@@ -7,7 +7,6 @@ class AttendeeSelector
 
   def select!
     collection
-      .select!{|attendee| attendee.average_rate.finite?}
       .sort_by!{|attendee| attendee.average_rate}
       .reverse!
   end
