@@ -10,6 +10,5 @@ class AttendeeSelector
       .select!{|attendee| attendee.average_rate.finite?}
       .sort_by!{|attendee| attendee.average_rate}
       .reverse!
-      .take(50)
   end
 end
