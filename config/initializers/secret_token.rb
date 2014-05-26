@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Oceny::Application.config.secret_key_base = '29bb1f91ad13363cfdb98913e99cbc72e6e168c9694cd9fadf031d38844260a5307d9307877d88196915eb5028957be56ff01e0dedf4fbc60514b157e96c5fa6'
+Oceny::Application.config.secret_key_base = ENV.fetch('SECRET_TOKEN')
