@@ -25,6 +25,6 @@ class AttendeeDecorator < Draper::Decorator
   end
 
   def list
-    @list ||= object.class.order(:age.asc, :id.asc).to_a
+    @list ||= object.class.order(:id.asc).to_a
   end
 end
