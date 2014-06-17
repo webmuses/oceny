@@ -12,6 +12,7 @@ Oceny::Application.routes.draw do
     end
 
     resources :results, only: [:index]
+    resources :forms, only: [:index]
   end
 
   # sessions
