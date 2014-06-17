@@ -1,14 +1,18 @@
 Oceny::Application.routes.draw do
   root 'dashboard#index'
 
-  resources :attendees, only: [:index, :show] do
+  resources :attendees do
     post :upload, on: :collection
-
-    resources :rates, only: [:create]
-    resources :comments, only: [:create]
   end
 
-  get '/results' => 'results#index'
+  namespace :api do
+    resources :attendees, only: [:index, :show] do
+      resources :rates, only: [:create]
+      resources :comments, only: [:create]
+    end
+
+    resources :results, only: [:index]
+  end
 
   # sessions
   get '/auth/:provider/callback', to: 'sessions#create'

@@ -1,4 +1,4 @@
-class RatesController < ApplicationController
+class Api::RatesController < Api::BaseController
   def create
     attendee = Attendee.find(params[:attendee_id])
 

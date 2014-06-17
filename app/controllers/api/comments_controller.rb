@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < Api::BaseController
   def create
     attendee = Attendee.find(params[:attendee_id])
 
