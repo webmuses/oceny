@@ -1,0 +1,11 @@
+<h1>Formularze</h1>
+
+<div>
+  <ol>
+    {{#each form in forms}}
+      <li> {{form.name}} </li>
+    {{/each}}
+  </ol>
+</div>
+
+<button {{action 'new'}}>Nowy</button>
