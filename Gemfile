@@ -16,6 +16,7 @@ gem 'ember-source', '~> 1.10.0'
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'mongoid', '~> 4.0.1'
 gem 'pry-rails', '~> 0.3.3'
+gem 'responders', '~> 2.1.0'
 gem 'thin', '~> 1.6.3'
 
 group :development, :test do
