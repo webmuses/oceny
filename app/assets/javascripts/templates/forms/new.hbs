@@ -1,5 +1,6 @@
-<form {{action "submit" on="submit"}}>
-  <p><label>Nazwa {{input type="text" name="name"}}</label></p>
-  <button {{action "cancel"}}>Anuluj</button>
-  <input type="submit" value="Zapisz">
+<form {{action 'submit' on='submit'}}>
+  <label>Nazwa</label>
+  {{focus-input name='name'}}
+  <button {{action 'submit'}}>Zapisz</button>
+  <button {{action 'cancel'}}>Anuluj</button>
 </form>
