@@ -6,7 +6,3 @@ App.Router.map ()->
   @route 'results', path: '/results'
   @resource 'forms', () ->
     @route('new')
-
-App.IndexRoute = Ember.Route.extend
-  beforeModel: () ->
-    @transitionTo('attendees');
