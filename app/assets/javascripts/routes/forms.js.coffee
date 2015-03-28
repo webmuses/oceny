@@ -1,3 +1,3 @@
-App.FormsRoute = Ember.Route.extend
+App.FormsIndexRoute = Ember.Route.extend
   model: () =>
     return Ember.$.getJSON('/api/forms.json')
