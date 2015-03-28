@@ -1,6 +1,8 @@
+<h1>Edycja formularza</h1>
+
 <form {{action 'submit' on='submit'}}>
   <label>Nazwa</label>
-  {{focus-input name='name'}}
+  {{focus-input name='name' value=model.name}}
   <button {{action 'submit'}}>Zapisz</button>
   <button {{action 'cancel'}}>Anuluj</button>
 </form>

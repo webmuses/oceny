@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="header">
     <ul class='menu'>
-      <li><a href="#/">Zgłoszenia</a></li>
-      <li><a href="#/results">Wyniki</a></li>
-      <li><a href='#/forms'>Formularze</a></li>
+      {{#link-to 'form' tagName='li'}}Formularz{{/link-to}}
+      {{#link-to 'attendees' tagName='li'}}Zgłoszenia{{/link-to}}
+      {{#link-to 'results' tagName='li'}}Wyniki{{/link-to}}
     </ul>
   </div>
 

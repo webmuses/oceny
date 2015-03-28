@@ -4,5 +4,5 @@ App.Router.map ()->
   @resource 'attendees'
   @resource 'attendee', path: '/attendees/:id'
   @route 'results', path: '/results'
-  @resource 'forms', () ->
-    @route('new')
+  @resource 'form', () ->
+    @route('edit')

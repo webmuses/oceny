@@ -2,6 +2,7 @@
   height: 50px;
   border-bottom: 1px solid black;
   margin-bottom: 15px;
+  font-family: 'Lato';
 
   ul.menu {
     padding: 0;
@@ -10,15 +11,13 @@
     li {
       display: inline-block;
       padding: 10px 20px 10px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: black;
+      cursor: pointer;
 
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: black;
-
-        &:hover {
-          color: #1fcfc1;
-        }
+      &:hover, &.active {
+        color: #1fcfc1;
       }
     }
   }
