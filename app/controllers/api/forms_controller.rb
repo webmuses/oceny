@@ -15,7 +15,7 @@ module Api
     private
 
     def form_params
-      params.permit(:name)
+      params.permit(:name, :permalink)
     end
   end
 end

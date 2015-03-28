@@ -2,5 +2,11 @@
 
 <button {{action 'edit'}}>Edytuj</button>
 
-<h2>Nazwa</h2>
-<p>{{model.name}}</p>
+<p>
+  <strong>Nazwa:</strong>
+  {{model.name}}
+</p>
+<p>
+  <strong>Link:</strong>
+  <a target="_blank" {{bind-attr href='model.permalink'}}>/{{model.permalink}}</a>
+</p>

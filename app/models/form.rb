@@ -3,6 +3,5 @@ class Form
   include Mongoid::Timestamps
 
   field :name, type: String
-
-  has_many :questions
+  field :permalink, type: String
 end

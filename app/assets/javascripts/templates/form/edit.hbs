@@ -1,8 +1,14 @@
 <h1>Edycja formularza</h1>
 
 <form {{action 'submit' on='submit'}}>
-  <label>Nazwa</label>
-  {{focus-input name='name' value=model.name}}
+  <div class='field'>
+    <label>Nazwa</label>
+    {{focus-input name='name' value=model.name}}
+  </div>
+  <div class='field'>
+    <label>Permalink</label>
+    {{input type='text' name='permalink' value=model.permalink}}
+  </div>
   <button {{action 'submit'}}>Zapisz</button>
   <button {{action 'cancel'}}>Anuluj</button>
 </form>
