@@ -1,4 +1,4 @@
-class AttendeeSelector
+class SubmissionSelector
   attr_accessor :collection
 
   def initialize(collection)
@@ -7,7 +7,7 @@ class AttendeeSelector
 
   def select!
     collection
-      .sort_by!{|attendee| attendee.average_rate}
+      .sort_by!{|submission| submission.average_rate}
       .reverse!
   end
 end

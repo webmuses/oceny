@@ -1,16 +1,16 @@
 module Api
   class RatesController < Api::BaseController
     def create
-      attendee = Attendee.find(params[:attendee_id])
+      submission = Submission.find(params[:submission_id])
 
       rate = Rate.find_or_create_by({
         user: current_user,
-        attendee: attendee,
+        submission: submission,
         nickname: current_user.nickname
       })
       rate.update_attribute(:value, params[:value])
 
-      render json: attendee.rates
+      render json: submission.rates
     end
   end
 end

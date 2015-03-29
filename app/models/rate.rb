@@ -5,5 +5,5 @@ class Rate
   field :nickname, type: String
 
   belongs_to :user
-  belongs_to :attendee
+  belongs_to :submission
 end

@@ -1,12 +1,12 @@
 Oceny::Application.routes.draw do
   root 'dashboard#index'
 
-  resources :attendees do
+  resources :submissions do
     post :upload, on: :collection
   end
 
   namespace :api do
-    resources :attendees, only: [:index, :show] do
+    resources :submissions, only: [:index, :show] do
       resources :rates, only: [:create]
       resources :comments, only: [:create]
     end

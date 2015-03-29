@@ -2,9 +2,9 @@
 
 <div>
   <ol>
-    {{#each attendee in results}}
+    {{#each submission in results}}
       <li>
-        {{attendee_link attendee}}, wiek: {{attendee.age}}, średnia ocena: {{attendee.average_rate}}
+        {{submission_link submission}}, wiek: {{submission.age}}, średnia ocena: {{submission.average_rate}}
       </li>
     {{/each}}
   </ol>

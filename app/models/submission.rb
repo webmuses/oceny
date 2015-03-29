@@ -1,4 +1,4 @@
-class Attendee
+class Submission
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
 

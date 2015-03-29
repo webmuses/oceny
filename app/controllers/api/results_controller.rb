@@ -1,10 +1,10 @@
 module Api
   class ResultsController < Api::BaseController
     def index
-      attendees = AttendeeDecorator.decorate_collection(Attendee.all)
-      results = AttendeeSelector.new(attendees).select!
+      submissions = SubmissionDecorator.decorate_collection(Submission.all)
+      results = SubmissionSelector.new(submissions).select!
 
-      render json: results, each_serializer: AttendeeResultSerializer
+      render json: results, each_serializer: SubmissionResultSerializer
     end
   end
 end

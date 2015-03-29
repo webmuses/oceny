@@ -1,0 +1,12 @@
+<h1>Lista zgłoszeń</h1>
+
+<div>
+  <ol>
+    {{#each submission in submissions}}
+      <li>
+        {{submission_link submission}}, wiek: {{submission.age}}
+      </li>
+    {{/each}}
+  </ol>
+</div>
+

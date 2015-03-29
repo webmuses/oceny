@@ -1,11 +1,11 @@
 module Api
   class CommentsController < Api::BaseController
     def create
-      attendee = Attendee.find(params[:attendee_id])
+      submission = Submission.find(params[:submission_id])
 
       comment = Comment.create({
         user: current_user,
-        attendee: attendee,
+        submission: submission,
         nickname: current_user.nickname,
         body: params[:body]
       })

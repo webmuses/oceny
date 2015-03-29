@@ -1,4 +1,4 @@
-class AttendeeResultSerializer < ActiveModel::Serializer
+class SubmissionResultSerializer < ActiveModel::Serializer
   attributes :id, :name, :age, :email, :average_rate
 
   def average_rate

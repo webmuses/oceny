@@ -1,0 +1,16 @@
+<div class='submission'>
+  {{partial "submission"}}
+</div>
+
+<div class='navigation'>
+  {{#link-to "submission" prev_id id='prev' class='button prev'}} poprzednie zgłoszenie {{/link-to}}
+  {{#link-to "submission" next_id id='next' class='button next'}} następne zgłoszenie {{/link-to}}
+</div>
+
+<div class='rating'>
+  {{view App.RatingView}}
+</div>
+
+<div class='comments'>
+  {{view App.CommentsView}}
+</div>

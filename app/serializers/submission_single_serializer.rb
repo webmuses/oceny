@@ -1,4 +1,4 @@
-class AttendeeSingleSerializer < ActiveModel::Serializer
+class SubmissionSingleSerializer < ActiveModel::Serializer
   self.root = false
 
   attributes :id, :name, :email, :age, :place, :experience, :level, :os, :reason,

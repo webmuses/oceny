@@ -1,4 +1,4 @@
-class AttendeeDecorator < Draper::Decorator
+class SubmissionDecorator < Draper::Decorator
   include Draper::LazyHelpers
 
   delegate_all
@@ -21,7 +21,7 @@ class AttendeeDecorator < Draper::Decorator
   end
 
   def position
-    list.index{|attendee| attendee.id == id}
+    list.index{|submission| submission.id == id}
   end
 
   def list
