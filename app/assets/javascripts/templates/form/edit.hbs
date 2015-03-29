@@ -6,7 +6,8 @@
     {{focus-input name='name' value=model.name}}
   </div>
   <div class='field'>
-    <label>Permalink</label>
+    <label>Link</label>
+    {{location.origin}}/
     {{input type='text' name='permalink' value=model.permalink}}
   </div>
   <button {{action 'submit'}}>Zapisz</button>
