@@ -89,6 +89,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    haml (4.0.6)
+      tilt
     handlebars-source (3.0.0)
     hashie (3.4.0)
     hike (1.2.3)
@@ -228,6 +230,7 @@ DEPENDENCIES
   draper (~> 2.1.0)
   ember-rails (~> 0.17.0)
   ember-source (~> 1.10.0)
+  haml (~> 4.0.6)
   handlebars-source (~> 3.0.0)
   jquery-rails (~> 4.0.3)
   momentjs-rails (~> 2.9.0)
