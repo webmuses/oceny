@@ -19,4 +19,6 @@ Oceny::Application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/login' => redirect('/auth/github')
   delete '/logout' => 'sessions#destroy'
+
+  get '/:permalink', to: 'forms#show'
 end
