@@ -6,8 +6,23 @@ class FormsController < ApplicationController
 
   def show
     form = Form.find_by(form_params)
+    submission = Submission.new
 
-    render :show, locals: { form: form }
+    render :show, locals: { form: form, submission: submission }
+  end
+
+  def submit
+    form = Form.find_by(form_params)
+
+    submission = Submission.new(submission_params)
+    if submission.save
+      redirect_to(thanks_path)
+    else
+      redirect_to(form_path(params[:permalink]))
+    end
+  end
+
+  def thanks
   end
 
   private
@@ -18,5 +33,9 @@ class FormsController < ApplicationController
 
   def form_params
     params.permit(:permalink)
+  end
+
+  def submission_params
+    params.require(:submission).permit(*Submission::FIELD_NAMES)
   end
 end

@@ -1,10 +1,6 @@
 Oceny::Application.routes.draw do
   root 'dashboard#index'
 
-  resources :submissions do
-    post :upload, on: :collection
-  end
-
   namespace :api do
     resources :submissions, only: [:index, :show] do
       resources :rates, only: [:create]
@@ -20,5 +16,7 @@ Oceny::Application.routes.draw do
   get '/login' => redirect('/auth/github')
   delete '/logout' => 'sessions#destroy'
 
-  get '/:permalink', to: 'forms#show'
+  get '/:permalink', to: 'forms#show', as: :form
+  post '/:permalink/submit', to: 'forms#submit', as: :submit
+  get '/:permalink/thanks', to: 'forms#thanks', as: :thanks
 end

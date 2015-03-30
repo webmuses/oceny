@@ -2,15 +2,12 @@ class Submission
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
 
-  field :_id, type: Integer
-  field :name, type: String
-  field :email, type: String
-  field :age, type: String
-  field :place, type: String
-  field :experience, type: String
-  field :level, type: String
-  field :os, type: String
-  field :reason, type: String
+  FIELD_NAMES = [:name, :email, :age, :place, :experience, :level, :os, :reason]
+
+  FIELD_NAMES.each do |field_name|
+    validates field_name, presence: true
+    field field_name, type: String
+  end
 
   has_many :rates
   has_many :comments

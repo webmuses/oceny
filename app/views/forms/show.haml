@@ -2,4 +2,31 @@
 %html
   %head
     %title= form.name
+    = stylesheet_link_tag 'form'
   %body
+    = form_for(submission, url: submit_path(params[:permalink])) do |f|
+      .field
+        = f.label :name, 'Imię i nazwisko'
+        = f.text_field :name
+      .field
+        = f.label :email, 'Email'
+        = f.text_field :email
+      .field
+        = f.label :age, 'Wiek'
+        = f.number_field :age
+      .field
+        = f.label :place, 'Miejsce nauki'
+        = f.text_field :place
+      .field
+        = f.label :experience, 'Czy uczyłaś się już programować? A może masz już jakieś doświadczenie?'
+        = f.text_field :experience
+      .field
+        = f.label :level, 'Jaki jest Twój poziom języka angielskiego?'
+        = f.text_field :level
+      .field
+        = f.label :os, 'Z jakiego systemu operacyjnego korzystasz?'
+        = f.text_field :os
+      .field
+        = f.label :reason, 'Dlaczego chcesz uczestniczyć w Rails Girls? Czy wiesz, w jaki sposób będziesz mogła wykorzystać wiedzę zdobytą podczas warsztatów?'
+        = f.text_area :reason
+      = f.submit 'Wyślij'
