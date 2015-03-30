@@ -13,10 +13,14 @@ class SubmissionDecorator < Draper::Decorator
   end
 
   def next
+    return nil if position + 1 > list.count
+
     list[position + 1]
   end
 
   def prev
+    return nil if position - 1 < 0
+
     list[position - 1]
   end
 

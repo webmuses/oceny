@@ -7,16 +7,20 @@ class SubmissionSingleSerializer < ActiveModel::Serializer
   has_many :rates
   has_many :comments
 
+  def id
+    "#{object.id}"
+  end
+
   def position
     decorated.position + 1
   end
 
   def prev_id
-    decorated.prev.try(:id)
+    decorated.prev ? "#{decorated.prev.id}" : nil
   end
 
   def next_id
-    decorated.next.try(:id)
+    decorated.next ? "#{decorated.next.id}" : nil
   end
 
   def average_rate
