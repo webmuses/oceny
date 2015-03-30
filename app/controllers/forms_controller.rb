@@ -1,6 +1,7 @@
 class FormsController < ApplicationController
   layout false
 
+  skip_before_action :authenticate
   before_action :set_custom_headers
 
   def show
