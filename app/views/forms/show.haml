@@ -7,26 +7,26 @@
     = form_for(submission, url: submit_path(params[:permalink])) do |f|
       .field
         = f.label :name, 'Imię i nazwisko'
-        = f.text_field :name
+        = f.text_field :name, required: true
       .field
         = f.label :email, 'Email'
-        = f.text_field :email
+        = f.text_field :email, required: true
       .field
         = f.label :age, 'Wiek'
-        = f.number_field :age
+        = f.number_field :age, required: true
       .field
         = f.label :place, 'Miejsce nauki'
-        = f.text_field :place
+        = f.text_field :place, required: true
       .field
         = f.label :experience, 'Czy uczyłaś się już programować? A może masz już jakieś doświadczenie?'
-        = f.text_field :experience
+        = f.text_field :experience, required: true
       .field
         = f.label :level, 'Jaki jest Twój poziom języka angielskiego?'
-        = f.text_field :level
+        = f.text_field :level, required: true
       .field
         = f.label :os, 'Z jakiego systemu operacyjnego korzystasz?'
-        = f.text_field :os
+        = f.text_field :os, required: true
       .field
         = f.label :reason, 'Dlaczego chcesz uczestniczyć w Rails Girls? Czy wiesz, w jaki sposób będziesz mogła wykorzystać wiedzę zdobytą podczas warsztatów?'
-        = f.text_area :reason
+        = f.text_area :reason, rows: 4, required: true
       = f.submit 'Wyślij'
