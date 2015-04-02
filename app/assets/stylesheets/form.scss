@@ -39,13 +39,15 @@ label {
     background-image: none;
     border: 0;
     border-bottom: 2px solid #999;
-    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    background: white;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, background ease-in-out 0.2s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, background ease-in-out 0.2s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, background ease-in-out 0.2s;
 
     &:focus {
       outline: 0;
       border-bottom: 2px solid #d3360b;
+      background: rgba(211, 54, 11, 0.1);
     }
   }
 }
