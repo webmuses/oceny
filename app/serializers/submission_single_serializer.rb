@@ -1,8 +1,8 @@
 class SubmissionSingleSerializer < ActiveModel::Serializer
   self.root = false
 
-  attributes :id, :name, :email, :age, :place, :experience, :level, :os, :reason,
-    :position, :prev_id, :next_id, :average_rate
+  attributes :id, :fullname, :email, :age, :experience, :english, :os, :reason,
+    :extra, :position, :prev_id, :next_id, :average_rate
 
   has_many :rates
   has_many :comments

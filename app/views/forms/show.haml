@@ -6,27 +6,40 @@
   %body
     = form_for(submission, url: submit_path(params[:permalink])) do |f|
       .field
-        = f.label :name, 'Imię i nazwisko'
-        = f.text_field :name, required: true
+        = f.label :fullname
+        = f.text_field :fullname, required: true
       .field
-        = f.label :email, 'Email'
+        = f.label :email
         = f.email_field :email, required: true
       .field
-        = f.label :age, 'Wiek'
+        = f.label :age
         = f.number_field :age, required: true
       .field
-        = f.label :place, 'Miejsce nauki'
-        = f.text_field :place, required: true
+        = f.label :experience
+        %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
+        %table
+          %tr
+            %th
+            - submission.experience_answers.each do |answer|
+              %th= answer
+          - submission.experience_technologies.each do |symbol, technology|
+            %tr
+              %td= technology
+              - submission.experience_answers.each do |answer|
+                %td.answer
+                  %span= radio_button_tag("submission[experience][#{symbol}]", answer)
       .field
-        = f.label :experience, 'Czy uczyłaś się już programować? A może masz już jakieś doświadczenie?'
-        = f.text_field :experience, required: true
+        = f.label :english, 'How fluent are you in English?'
+        .radio-group
+          = f.collection_radio_buttons :english, submission.english_answers, :to_s, :to_s
       .field
-        = f.label :level, 'Jaki jest Twój poziom języka angielskiego?'
-        = f.text_field :level, required: true
+        = f.label :os, 'What operating system are you using?'
+        .radio-group
+          = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
       .field
-        = f.label :os, 'Z jakiego systemu operacyjnego korzystasz?'
-        = f.text_field :os, required: true
-      .field
-        = f.label :reason, 'Dlaczego chcesz uczestniczyć w Rails Girls? Czy wiesz, w jaki sposób będziesz mogła wykorzystać wiedzę zdobytą podczas warsztatów?'
+        = f.label :reason, 'Why do you want to participate in Rails Girls Kraków? What are your expectations?'
         = f.text_area :reason, rows: 4, required: true
-      = f.submit 'Wyślij'
+      .field
+        = f.label :extra, 'Is there anything in particular we should be aware of to make your attendance better/easier?'
+        = f.text_area :extra, rows: 4
+      = f.submit 'Send'

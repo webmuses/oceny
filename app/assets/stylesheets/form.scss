@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
 
 * {
   box-sizing: border-box;
@@ -29,7 +29,10 @@ label {
 .field {
   margin-bottom: 70px;
 
-  input, textarea {
+  input[type=text],
+  input[type=email],
+  input[type=number],
+  textarea {
     display: block;
     width: 100%;
     padding: 6px 12px;
@@ -48,6 +51,49 @@ label {
       outline: 0;
       border-bottom: 2px solid #d3360b;
       background: rgba(211, 54, 11, 0.1);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      width: 100%;
+
+      &:nth-child(even) {
+        background-color: rgb(241,241,241);
+      }
+
+      th {
+        font-weight: normal;
+        width: 20%;
+        text-align: center;
+      }
+
+      td.answer {
+        text-align: center;
+      }
+    }
+  }
+
+  .radio-group {
+    input[type=radio], label {
+      display: inline-block;
+      text-transform: none;
+      font-weight: normal;
+      color: black;
+    }
+
+    input[type=radio] {
+      position: relative;
+      top: -2px;
+      margin-right: 10px;
+    }
+
+    & > label {
+      display: inline-block;
+      margin-right: 20px;
     }
   }
 }
@@ -69,3 +115,4 @@ input[type=submit] {
   position: relative;
   letter-spacing: 2px;
 }
+

@@ -87,7 +87,7 @@ span.date {
   color: #555;
 }
 
-.submission table{
+.submission > table {
   border-collapse: collapse;
   width: 100%;
   border-bottom: 1px solid #eee;
@@ -97,28 +97,30 @@ span.date {
   width: 560px;
   padding: 22px 25px 25px 25px;
 
-  th {
-    vertical-align: top;
-    color: #222;
-    text-align: left;
-    padding: 7px 9px 7px 9px;
-    border-top: 1px solid #eee;
-  }
+  & > tr {
+    & > th {
+      vertical-align: top;
+      color: #222;
+      text-align: left;
+      padding: 7px 9px 7px 9px;
+      border-top: 1px solid #eee;
+    }
 
-  td {
-    vertical-align: top;
-    color: #333;
-    width: 60%;
-    padding: 7px 9px 7px 0;
-    border-top: 1px solid #eee;
-  }
+    & > td {
+      vertical-align: top;
+      color: #333;
+      width: 60%;
+      padding: 7px 9px 7px 0;
+      border-top: 1px solid #eee;
+    }
 
-  tr:nth-child(odd) {
-    background-color: #F5F5F5;
-  }
+    &:nth-child(odd) {
+      background-color: #F5F5F5;
+    }
 
-  tr:nth-child(even) {
-    background-color: #FFFFFF;
+    &:nth-child(even) {
+      background-color: #FFFFFF;
+    }
   }
 }
 
