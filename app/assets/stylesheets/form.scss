@@ -1,5 +1,7 @@
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
 
+$rg-red: #d3360b;
+
 * {
   box-sizing: border-box;
 }
@@ -23,7 +25,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #d3360b;
+  color: $rg-red;
 }
 
 .field {
@@ -49,7 +51,7 @@ label {
 
     &:focus {
       outline: 0;
-      border-bottom: 2px solid #d3360b;
+      border-bottom: 2px solid $rg-red;
       background: rgba(211, 54, 11, 0.1);
     }
   }
@@ -103,7 +105,7 @@ input[type=submit] {
   cursor: pointer;
   font-size: 28px;
   color: #fff;
-  background: #d3360b;
+  background: $rg-red;
   padding: 16px 112px 16px;
   border-radius: 2px;
   font-weight: 900;
@@ -114,5 +116,8 @@ input[type=submit] {
   transition: 0.3s all;
   position: relative;
   letter-spacing: 2px;
-}
 
+  &:hover {
+    background: lighten($rg-red, 10%);
+  }
+}
