@@ -5,12 +5,9 @@
     = stylesheet_link_tag 'form'
   %body
     %header
-      %p.mobile Rails Girls Kraków
-      %p 15-16 May 2015
-      = link_to 'http://railsgirls.com/krakow', 'http://railsgirls.com/krakow'
-      %br
-
-      %h1 Registration form
+      %h1 Rails Girls Kraków
+      %p.date 15-16 May 2015
+      = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
 
     = form_for(submission, url: submit_path(params[:permalink])) do |f|
       .field

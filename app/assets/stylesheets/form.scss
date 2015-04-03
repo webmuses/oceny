@@ -28,24 +28,26 @@ button, input, optgroup, select, textarea {
 header {
   background: $rg-navy;
   margin-bottom: 3rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 
   * {
     color: white;
   }
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: .5rem;
+  h1 {
+    letter-spacing: -.125rem;
+    background: white;
+    display: inline-block;
+    color: $rg-red;
+    padding: .25rem 3.65rem .25rem .25rem;
+    margin-top: 0;
   }
 
-  h1 {
-    background: #FFF;
-    color: $rg-red;
-    padding: .25rem 4.4rem .25rem .25rem;
-    letter-spacing: -.125rem;
-    display: inline-block;
-    font-size: 2.3rem;
+  a:hover { color: $rg-red; }
+
+  .date {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 1024px) {
@@ -53,11 +55,24 @@ header {
     height: 500px;
     background: url(/assets/rgkrk-banner.png) center top no-repeat;
     background-size: cover;
+    padding-top: 1rem;
 
-    h1 {
+    h1 { display: none; }
+
+    a {
+      position: absolute;
+      right: 1rem;
+    }
+
+    .date {
+      background: white;
+      color: $rg-red;
+      padding: .25rem 3.65rem .25rem .25rem;
+      display: inline-block;
+      font-size: 2.3rem;
       position: absolute;
       right: 0;
-      top: 5.5rem;
+      top: 6.5rem;
     }
   }
 }
