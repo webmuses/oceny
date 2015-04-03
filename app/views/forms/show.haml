@@ -13,7 +13,7 @@
         = f.email_field :email, required: true
       .field
         = f.label :age
-        = f.number_field :age, required: true
+        = f.number_field :age, required: true, min: 0
       .field
         = f.label :experience
         %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
