@@ -16,6 +16,8 @@ Oceny::Application.routes.draw do
   get '/login' => redirect('/auth/github')
   delete '/logout' => 'sessions#destroy'
 
+  get '/status' => 'status#check'
+
   get '/:permalink', to: 'forms#show', as: :form
   post '/:permalink/submit', to: 'forms#submit', as: :submit
   get '/:permalink/thanks', to: 'forms#thanks', as: :thanks
