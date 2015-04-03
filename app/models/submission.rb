@@ -29,7 +29,7 @@ class Submission
       js: 'Javascript',
       databases: 'Databases',
       rails: 'Ruby on Rails',
-      programming: 'Any programming language (PHP, C++, etc.)'
+      programming: 'Any other programming language (PHP, C++, etc.)'
     }
   end
 

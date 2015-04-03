@@ -71,16 +71,20 @@ label {
       &:nth-child(even) {
         background-color: rgb(241,241,241);
       }
+    }
 
-      th {
-        font-weight: normal;
-        width: 20%;
-        text-align: center;
-      }
+    td, th {
+      padding: 10px;
+    }
 
-      td.answer {
-        text-align: center;
-      }
+    th {
+      font-weight: normal;
+      width: 20%;
+      text-align: center;
+    }
+
+    td.answer {
+      text-align: center;
     }
   }
 
