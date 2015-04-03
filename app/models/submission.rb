@@ -44,9 +44,9 @@ class Submission
 
   def english_answers
     [
-      'I can read',
-      'I can read & listen',
-      'I can communicate'
+      'I don\'t speak English',
+      'I know English well enough for basic communication',
+      'I can communicate fluently - a workshop in English is no biggie for me'
     ]
   end
 
