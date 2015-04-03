@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
 
 $rg-red: #d3360b;
+$rg-navy: #002e3b;
 
 * {
   box-sizing: border-box;
@@ -42,7 +43,7 @@ label {
   textarea {
     display: block;
     width: 100%;
-    padding: 6px 12px;
+    padding: .8rem;
     font-size: 14px;
     line-height: 1.42857143;
     background-color: #fff;
@@ -56,8 +57,8 @@ label {
 
     &:focus {
       outline: 0;
-      border-bottom: 2px solid $rg-red;
-      background: rgba(211, 54, 11, 0.1);
+      border-bottom: 2px solid $rg-navy;
+      background: transparentize($rg-navy, .95);
     }
   }
 
