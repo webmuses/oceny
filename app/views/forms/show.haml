@@ -38,7 +38,7 @@
           = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
       .field
         = f.label :reason, 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?'
-        = f.text_area :reason, rows: 4, required: true
+        = f.text_area :reason, rows: 8, required: true
       .field
         = f.label :extra, 'Is there anything in particular we should be aware of to make your attendance better/easier?'
         = f.text_area :extra, rows: 4
