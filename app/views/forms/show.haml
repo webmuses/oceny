@@ -4,6 +4,14 @@
     %title= form.name
     = stylesheet_link_tag 'form'
   %body
+    %header
+      %p.mobile Rails Girls Kraków
+      %p 15-16 May 2015
+      = link_to 'http://railsgirls.com/krakow', 'http://railsgirls.com/krakow'
+      %br
+
+      %h1 Registration form
+
     = form_for(submission, url: submit_path(params[:permalink])) do |f|
       .field
         = f.label :fullname

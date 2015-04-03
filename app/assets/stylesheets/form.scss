@@ -7,22 +7,59 @@ $rg-navy: #002e3b;
   box-sizing: border-box;
 }
 
-html, body {
+html, body, p {
   margin: 0;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: 5%;
+  padding: 0 5% 5%;
 }
 
-form {
+header, form {
   max-width: 900px;
   margin: 0 auto;
 }
 
 button, input, optgroup, select, textarea {
   margin: 0;
+}
+
+header {
+  background: $rg-navy;
+  margin-bottom: 3rem;
+  padding: 1rem;
+
+  * {
+    color: white;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+
+  h1 {
+    background: #FFF;
+    color: $rg-red;
+    padding: .25rem 4.4rem .25rem .25rem;
+    letter-spacing: -.125rem;
+    display: inline-block;
+    font-size: 2.3rem;
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    height: 500px;
+    background: url(/assets/rgkrk-banner.png) center top no-repeat;
+    background-size: cover;
+
+    h1 {
+      position: absolute;
+      right: 0;
+      top: 5.5rem;
+    }
+  }
 }
 
 label {
