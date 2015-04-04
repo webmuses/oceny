@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
     user = User.find_or_create_by(basic_user_attributes)
 
     session[:user_id] = user.id
-    redirect_to root_url
+    redirect_to(dashboard_path)
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to(root_path)
   end
 
   protected
