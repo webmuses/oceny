@@ -18,7 +18,9 @@ Oceny::Application.routes.draw do
 
   get '/status' => 'status#check'
 
-  get '/:permalink', to: 'forms#show', as: :form
-  post '/:permalink/submit', to: 'forms#submit', as: :submit
-  get '/:permalink/thanks', to: 'forms#thanks', as: :thanks
+  scope A9n.form_path do
+    get '', to: 'forms#show', as: :form
+    post '/submit', to: 'forms#submit', as: :submit
+    get '/thanks', to: 'forms#thanks', as: :thanks
+  end
 end

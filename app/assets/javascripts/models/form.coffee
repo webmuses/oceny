@@ -1,1 +1,0 @@
-App.Form = DS.Model.extend()

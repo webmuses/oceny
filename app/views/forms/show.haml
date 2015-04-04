@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= form.name
+    %title Rails Girls Kraków 2015
     = stylesheet_link_tag 'form'
   %body
     %header
@@ -9,7 +9,7 @@
       %p.date 15-16 May 2015
       = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
 
-    = form_for(submission, url: submit_path(params[:permalink])) do |f|
+    = form_for(submission, url: submit_path) do |f|
       .field
         = f.label :fullname
         = f.text_field :fullname, required: true
