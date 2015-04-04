@@ -38,4 +38,5 @@ gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-github', '~> 1.1.2'
 
 # configuration
+gem 'a9n', '~> 0.4.2'
 gem 'dotenv-rails', '~> 2.0.0'
