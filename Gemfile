@@ -22,6 +22,11 @@ gem 'pry-rails', '~> 0.3.3'
 gem 'responders', '~> 2.1.0'
 gem 'thin', '~> 1.6.3'
 
+group :development do
+  gem 'letter_opener', '~> 1.3.0'
+  gem 'meta_request', '~> 0.3.4'
+end
+
 group :development, :test do
   gem 'awesome_print', '~> 1.6.1'
   gem 'better_errors', '~> 2.1.1'
