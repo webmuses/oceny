@@ -1,98 +1,90 @@
-!!!
-%html
-  %head
-    %title Rails Girls Kraków 2015
-    = favicon_link_tag 'favicon.png'
-    = stylesheet_link_tag 'form'
+- content_for :required do
+  %span.hint.hint--right.hint--rounded{'data-hint' => 'required'} *
 
-    - content_for :required do
-      %span.hint.hint--right.hint--rounded{'data-hint' => 'required'} *
+%header
+  %h1 Rails Girls Kraków
+  %p.date 15-16 May 2015
+  = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
 
-  %body
-    %header
-      %h1 Rails Girls Kraków
-      %p.date 15-16 May 2015
-      = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
+= form_for(submission, url: submit_path) do |f|
+  .field
+    = f.label :fullname do
+      Fullname
+      = yield(:required)
 
-    = form_for(submission, url: submit_path) do |f|
-      .field
-        = f.label :fullname do
-          Fullname
-          = yield(:required)
+    = f.text_field :fullname, required: true
 
-        = f.text_field :fullname, required: true
+  .field
+    = f.label :email do
+      Email
+      = yield(:required)
 
-      .field
-        = f.label :email do
-          Email
-          = yield(:required)
+    = f.email_field :email, required: true
 
-        = f.email_field :email, required: true
+  .field
+    = f.label :age do
+      Age
+      = yield(:required)
 
-      .field
-        = f.label :age do
-          Age
-          = yield(:required)
+    = f.number_field :age, required: true, min: 0
 
-        = f.number_field :age, required: true, min: 0
+  .field
+    = f.label :about do
+      Who are you? Tell us a little bit about yourself
+      = yield(:required)
 
-      .field
-        = f.label :about do
-          Who are you? Tell us a little bit about yourself
-          = yield(:required)
+    = f.text_area :about, rows: 2, required: true
 
-        = f.text_area :about, rows: 2, required: true
+  .field
+    = f.label :experience do
+      Experience
+      = yield(:required)
 
-      .field
-        = f.label :experience do
-          Experience
-          = yield(:required)
+    %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
 
-        %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
+    %table
+      %tr
+        %th
+        - submission.experience_answers.each do |answer|
+          %th= answer
+      - submission.experience_technologies.each do |symbol, technology|
+        %tr
+          %td= technology
+          - submission.experience_answers.each do |answer|
+            %td.answer
+              %span= radio_button_tag("submission[experience][#{symbol}]", answer)
 
-        %table
-          %tr
-            %th
-            - submission.experience_answers.each do |answer|
-              %th= answer
-          - submission.experience_technologies.each do |symbol, technology|
-            %tr
-              %td= technology
-              - submission.experience_answers.each do |answer|
-                %td.answer
-                  %span= radio_button_tag("submission[experience][#{symbol}]", answer)
+  .field
+    = f.label :english do
+      How fluent are you in English?
+      = yield(:required)
 
-      .field
-        = f.label :english do
-          How fluent are you in English?
-          = yield(:required)
+    .radio-group
+      = f.collection_radio_buttons :english, submission.english_answers, :to_s, :to_s
 
-        .radio-group
-          = f.collection_radio_buttons :english, submission.english_answers, :to_s, :to_s
+  .field
+    = f.label :os do
+      What operating system do you use?
+      = yield(:required)
 
-      .field
-        = f.label :os do
-          What operating system do you use?
-          = yield(:required)
+    .radio-group
+      = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
 
-        .radio-group
-          = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
+  .field
+    = f.label :reason do
+      How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?
+      = yield(:required)
 
-      .field
-        = f.label :reason do
-          How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?
-          = yield(:required)
+    = f.text_area :reason, rows: 8, required: true
 
-        = f.text_area :reason, rows: 8, required: true
+  .field
+    = f.label :extra do
+      Is there anything in particular we should be aware of to make your attendance better/easier?
 
-      .field
-        = f.label :extra do
-          Is there anything in particular we should be aware of to make your attendance better/easier?
+    %p
+      E.g.
+      %i I'm vegan, I'm shortsighted, I've got cathisophobia
 
-        %p
-          E.g.
-          %i I'm vegan, I'm shortsighted, I've got cathisophobia
+    = f.text_area :extra, rows: 4
 
-        = f.text_area :extra, rows: 4
-
-      = f.submit 'Send'
+  = f.submit 'Send'

@@ -1,5 +1,5 @@
 class FormsController < ApplicationController
-  layout false
+  layout 'form'
 
   skip_before_action :authenticate
   before_action :set_custom_headers

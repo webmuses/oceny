@@ -17,7 +17,7 @@ body {
   padding: 0 5% 5%;
 }
 
-header, form {
+.container {
   max-width: 900px;
   margin: 0 auto;
 }
@@ -25,6 +25,16 @@ header, form {
 button, input, optgroup, select, textarea {
   margin: 0;
 }
+
+a, a:visited {
+  color: $rg-red;
+
+  &:hover {
+    color: lighten($rg-red, 10%);
+  }
+}
+
+p { margin-bottom: 1rem; }
 
 header {
   background: $rg-navy;
@@ -44,11 +54,14 @@ header {
     margin-top: 0;
   }
 
-  a:hover { color: $rg-red; }
+  a, a:visited {
+    color: white;
+
+    &:hover { color: $rg-red; }
+  }
 
   .date {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
   }
 
   @media (min-width: 1024px) {
@@ -86,10 +99,6 @@ label {
   font-weight: bold;
   text-transform: uppercase;
   color: $rg-red;
-
-  & + p {
-    margin-bottom: 1rem;
-  }
 }
 
 .hint {
@@ -192,4 +201,15 @@ input[type=submit] {
   &:hover {
     background: lighten($rg-red, 10%);
   }
+}
+
+// Thank you page
+
+.thanks {
+  margin-top: 2rem;
+  text-align: center;
+
+  h1 { color: $rg-red; }
+
+  p { font-size: 1.25rem; }
 }
