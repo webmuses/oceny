@@ -5,6 +5,7 @@ class Submission
   field :fullname, type: String
   field :email, type: String
   field :age, type: Integer
+  field :about, type: String
   field :experience, type: Hash
   field :english, type: String
   field :os, type: String

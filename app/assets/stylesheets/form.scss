@@ -86,6 +86,10 @@ label {
   font-weight: bold;
   text-transform: uppercase;
   color: $rg-red;
+
+  & + p {
+    margin-bottom: 1rem;
+  }
 }
 
 .hint {
