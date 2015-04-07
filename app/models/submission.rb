@@ -12,7 +12,7 @@ class Submission
   field :extra, type: String
 
   validates :fullname, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :age, presence: true
   validates :experience, presence: true
   validates :english, presence: true
