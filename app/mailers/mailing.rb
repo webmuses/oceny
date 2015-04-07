@@ -1,5 +1,5 @@
 class Mailing < ActionMailer::Base
-  default from: 'webmuses@gmail.com'
+  default from: 'railsgirlskrakow@gmail.com'
 
   def after_submission(submission)
     email = submission.email
