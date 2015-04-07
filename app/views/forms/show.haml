@@ -4,6 +4,10 @@
     %title Rails Girls Kraków 2015
     = favicon_link_tag 'favicon.png'
     = stylesheet_link_tag 'form'
+
+    - content_for :required do
+      %span.hint.hint--right.hint--rounded{'data-hint' => 'required'} *
+
   %body
     %header
       %h1 Rails Girls Kraków
@@ -12,16 +16,28 @@
 
     = form_for(submission, url: submit_path) do |f|
       .field
-        = f.label :fullname
+        = f.label :fullname do
+          Fullname
+          = yield(:required)
+
         = f.text_field :fullname, required: true
       .field
-        = f.label :email
+        = f.label :email do
+          Email
+          = yield(:required)
+
         = f.email_field :email, required: true
       .field
-        = f.label :age
+        = f.label :age do
+          Age
+          = yield(:required)
+
         = f.number_field :age, required: true, min: 0
       .field
-        = f.label :experience
+        = f.label :experience do
+          Experience
+          = yield(:required)
+
         %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
         %table
           %tr
@@ -35,17 +51,28 @@
                 %td.answer
                   %span= radio_button_tag("submission[experience][#{symbol}]", answer)
       .field
-        = f.label :english, 'How fluent are you in English?'
+        = f.label :english do
+          How fluent are you in English?
+          = yield(:required)
+
         .radio-group
           = f.collection_radio_buttons :english, submission.english_answers, :to_s, :to_s
       .field
-        = f.label :os, 'What operating system are you using?'
+        = f.label :os do
+          What operating system are you using?
+          = yield(:required)
+
         .radio-group
           = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
       .field
-        = f.label :reason, 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?'
+        = f.label :reason do
+          How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?
+          = yield(:required)
+
         = f.text_area :reason, rows: 8, required: true
       .field
-        = f.label :extra, 'Is there anything in particular we should be aware of to make your attendance better/easier?'
+        = f.label :extra do
+          Is there anything in particular we should be aware of to make your attendance better/easier?
+
         = f.text_area :extra, rows: 4
       = f.submit 'Send'
