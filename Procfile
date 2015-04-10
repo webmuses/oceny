@@ -1,1 +1,1 @@
-web: bin/rails server thin -p $PORT -e $RAILS_ENV
+web: bundle exec passenger start -p $PORT --max-pool-size 3

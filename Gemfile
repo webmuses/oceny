@@ -20,7 +20,7 @@ gem 'mongoid', '~> 4.0.2'
 gem 'newrelic_rpm', '~> 3.11.1.284'
 gem 'pry-rails', '~> 0.3.3'
 gem 'responders', '~> 2.1.0'
-gem 'thin', '~> 1.6.3'
+gem 'passenger', '~> 5.0.6'
 
 group :development do
   gem 'letter_opener', '~> 1.3.0'
