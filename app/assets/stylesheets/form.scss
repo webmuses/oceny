@@ -3,6 +3,7 @@
 
 $rg-red: #d3360b;
 $rg-navy: #002e3b;
+$rg-navy-blue: #0d5e85;
 
 * {
   box-sizing: border-box;
@@ -98,7 +99,7 @@ header {
   margin-bottom: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: $rg-red;
+  color: $rg-navy-blue;
 }
 
 abbr {
@@ -138,7 +139,7 @@ abbr {
   }
 
   .error {
-    color: #2cc9f4;
+    color: $rg-red;
     font-weight: bold;
   }
 
