@@ -15,6 +15,7 @@ class Submission
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
   validates :age, presence: true
+  validates :about, presence: true
   validates :experience, presence: true
   validates :english, presence: true
   validates :os, presence: true

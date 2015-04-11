@@ -12,11 +12,12 @@ class FormsController < ApplicationController
 
   def submit
     submission = Submission.new(submission_params)
+
     if submission.save
       Mailing.after_submission(submission).deliver_now
       redirect_to(thanks_path)
     else
-      redirect_to(form_path)
+      render :show, locals: { submission: submission }
     end
   end
 

@@ -1,44 +1,16 @@
-- content_for :required do
-  %span.hint.hint--right.hint--rounded{'data-hint' => 'required'} *
-
 %header
   %h1 Rails Girls Kraków
   %p.date 15-16 May 2015
   = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
 
-= form_for(submission, url: submit_path) do |f|
-  .field
-    = f.label :fullname do
-      Fullname
-      = yield(:required)
+= simple_form_for(submission, url: submit_path) do |f|
+  = f.input :fullname, required: true
+  = f.input :email, as: :email, required: true
+  = f.input :age, as: :integer, required: true, input_html: { min: 0 }
+  = f.input :about, as: :text, required: true, label: 'Who are you? Tell us a little bit about yourself', input_html: { rows: 2 }
 
-    = f.text_field :fullname, required: true
-
-  .field
-    = f.label :email do
-      Email
-      = yield(:required)
-
-    = f.email_field :email, required: true
-
-  .field
-    = f.label :age do
-      Age
-      = yield(:required)
-
-    = f.number_field :age, required: true, min: 0
-
-  .field
-    = f.label :about do
-      Who are you? Tell us a little bit about yourself
-      = yield(:required)
-
-    = f.text_area :about, rows: 2, required: true
-
-  .field
-    = f.label :experience do
-      Experience
-      = yield(:required)
+  .input
+    = f.label :experience, required: true
 
     %p Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
 
@@ -54,37 +26,10 @@
             %td.answer
               %span= radio_button_tag("submission[experience][#{symbol}]", answer)
 
-  .field
-    = f.label :english do
-      How fluent are you in English?
-      = yield(:required)
+  = f.input :english, required: true, as: :radio_buttons, collection: submission.english_answers, label: 'How fluent are you in English?'
+  = f.input :os, required: true, as: :radio_buttons, collection: submission.os_answers, label: 'What operating system do you use?'
+  = f.input :reason, as: :text, required: true, label: 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?', input_html: { rows: 8 }
 
-    .radio-group
-      = f.collection_radio_buttons :english, submission.english_answers, :to_s, :to_s
-
-  .field
-    = f.label :os do
-      What operating system do you use?
-      = yield(:required)
-
-    .radio-group
-      = f.collection_radio_buttons :os, submission.os_answers, :to_s, :to_s
-
-  .field
-    = f.label :reason do
-      How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?
-      = yield(:required)
-
-    = f.text_area :reason, rows: 8, required: true
-
-  .field
-    = f.label :extra do
-      Is there anything in particular we should be aware of to make your attendance better/easier?
-
-    %p
-      E.g.
-      %i I'm vegan, I'm shortsighted
-
-    = f.text_area :extra, rows: 4
+  = f.input :extra, as: :text, label: 'Is there anything in particular we should be aware of to make your attendance better/easier?', hint: "E.g. I'm vegan, I'm shortsighted", input_html: { rows: 4 }
 
   = f.submit 'Send'

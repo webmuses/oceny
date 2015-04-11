@@ -92,7 +92,7 @@ header {
   }
 }
 
-label {
+.input > label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -101,13 +101,11 @@ label {
   color: $rg-red;
 }
 
-.hint {
-  color: $rg-red;
-  text-transform: lowercase;
+abbr {
   font-weight: normal;
 }
 
-.field {
+.input {
   margin-bottom: 70px;
 
   input[type=text],
@@ -135,6 +133,34 @@ label {
     }
   }
 
+  .hint {
+    font-style: italic;
+  }
+
+  .error {
+    color: #2cc9f4;
+    font-weight: bold;
+  }
+
+  .radio {
+    input[type=radio], label {
+      display: block;
+      text-transform: none;
+      font-weight: normal;
+      color: black;
+    }
+
+    input[type=radio] {
+      float: left;
+      margin: 2px 10px 0 0;
+    }
+
+    & > label {
+      margin-right: 20px;
+    }
+  }
+
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -161,24 +187,6 @@ label {
       text-align: center;
     }
   }
-
-  .radio-group {
-    input[type=radio], label {
-      display: block;
-      text-transform: none;
-      font-weight: normal;
-      color: black;
-    }
-
-    input[type=radio] {
-      float: left;
-      margin: 2px 10px 0 0;
-    }
-
-    & > label {
-      margin-right: 20px;
-    }
-  }
 }
 
 input[type=submit] {
@@ -193,8 +201,8 @@ input[type=submit] {
   border: 0;
   outline: 0;
   box-shadow: none;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  -webkit-transition: 0.3s background;
+  transition: 0.3s background;
   position: relative;
   letter-spacing: 2px;
 
