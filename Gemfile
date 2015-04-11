@@ -18,9 +18,10 @@ gem 'handlebars-source', '~> 3.0.0'
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'mongoid', '~> 4.0.2'
 gem 'newrelic_rpm', '~> 3.11.1.284'
+gem 'passenger', '~> 5.0.6'
 gem 'pry-rails', '~> 0.3.3'
 gem 'responders', '~> 2.1.0'
-gem 'passenger', '~> 5.0.6'
+gem 'simple_form', '~> 3.1.0'
 
 group :development do
   gem 'letter_opener', '~> 1.3.0'
