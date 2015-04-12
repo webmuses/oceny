@@ -1,5 +1,6 @@
 class Submission
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
 
   field :fullname, type: String

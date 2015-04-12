@@ -1,5 +1,6 @@
 class Rate
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :value, type: Integer
   field :nickname, type: String
