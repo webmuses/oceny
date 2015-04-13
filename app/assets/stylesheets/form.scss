@@ -139,8 +139,10 @@ abbr {
   }
 
   .error {
+    display: block;
     color: $rg-red;
     font-weight: bold;
+    margin-top: 1rem;
   }
 
   .radio {
