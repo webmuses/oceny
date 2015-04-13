@@ -46,7 +46,3 @@ gem 'omniauth-github', '~> 1.1.2'
 # configuration
 gem 'a9n', '~> 0.4.2'
 gem 'dotenv-rails', '~> 2.0.0'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-hint.css', '~> 1.3.4'
-end
