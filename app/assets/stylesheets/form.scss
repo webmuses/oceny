@@ -3,7 +3,6 @@
 
 $rg-red: #d3360b;
 $rg-navy: #002e3b;
-$rg-navy-blue: #0d5e85;
 
 * {
   box-sizing: border-box;
@@ -99,7 +98,7 @@ header {
   margin-bottom: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: $rg-navy-blue;
+  color: $rg-navy;
 }
 
 abbr {
@@ -136,6 +135,7 @@ abbr {
 
   .hint {
     font-style: italic;
+    margin-bottom: 1rem;
   }
 
   .error {
@@ -151,6 +151,7 @@ abbr {
       text-transform: none;
       font-weight: normal;
       color: black;
+      margin-bottom: .5rem;
     }
 
     input[type=radio] {
