@@ -17,9 +17,9 @@ class Submission
   validates :email, presence: true, uniqueness: true
   validates :age, presence: true
   validates :about, presence: true
-  validates :experience, presence: true
-  validates :english, presence: true
-  validates :os, presence: true
+  validates :experience, presence: { message: 'please select answers for all technologies' }
+  validates :english, presence: { message: 'please select an answer' }
+  validates :os, presence: { message: 'please select an answer' }
   validates :reason, presence: true
 
   has_many :rates
