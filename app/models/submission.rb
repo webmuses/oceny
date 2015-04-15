@@ -10,6 +10,7 @@ class Submission
   field :experience, type: Hash
   field :english, type: String
   field :os, type: String
+  field :been_before, type: Boolean
   field :reason, type: String
   field :extra, type: String
 
@@ -20,6 +21,7 @@ class Submission
   validates :experience, presence: { message: 'please select answers for all technologies' }
   validates :english, presence: { message: 'please select an answer' }
   validates :os, presence: { message: 'please select an answer' }
+  validates :been_before, presence: { message: 'please select an answer' }
   validates :reason, presence: true
 
   has_many :rates

@@ -35,7 +35,8 @@ class FormsController < ApplicationController
   end
 
   def submission_params
-    params.require(:submission).permit(:fullname, :email, :age, :about, :os, :reason,
-      :english, :extra, :experience => [:html, :css, :js, :databases, :rails, :programming])
+    params.require(:submission).permit(:fullname, :email, :age, :about, :os,
+      :been_before, :reason, :english, :extra, :experience => [:html, :css, :js,
+      :databases, :rails, :programming])
   end
 end

@@ -30,6 +30,7 @@
 
   = f.input :english, required: true, as: :radio_buttons, collection: submission.english_answers, label: 'How fluent are you in English?'
   = f.input :os, required: true, as: :radio_buttons, collection: submission.os_answers, label: 'What operating system do you use?'
+  = f.input :been_before, required: true, as: :radio_buttons, label: 'Have you participated in Rails Girls before?'
   = f.input :reason, as: :text, required: true, label: 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?', input_html: { rows: 8 }
 
   = f.input :extra, as: :text, label: 'Is there anything in particular we should be aware of to make your attendance better/easier?', hint: "E.g. I'm vegan, I'm shortsighted", input_html: { rows: 4 }
