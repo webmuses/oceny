@@ -7,6 +7,9 @@ Oceny::Application.routes.draw do
     resources :submissions, only: [:index, :show] do
       resources :rates, only: [:create]
       resources :comments, only: [:create]
+      collection do
+        get :pending
+      end
     end
 
     resources :results, only: [:index]

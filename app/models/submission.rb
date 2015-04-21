@@ -27,6 +27,8 @@ class Submission
   has_many :rates
   has_many :comments
 
+  scope :pending, -> { not_in(id: Rate.all.map(:submission_id)) }
+
   def experience_technologies
     {
       html: 'HTML',

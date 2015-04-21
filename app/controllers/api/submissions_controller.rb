@@ -7,5 +7,9 @@ module Api
     def show
       render json: Submission.find(params[:id]), serializer: SubmissionSingleSerializer
     end
+
+    def pending
+      render json: Submission.pending, each_serializer: PendingSubmissionEachSerializer
+    end
   end
 end
