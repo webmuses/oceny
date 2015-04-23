@@ -13,6 +13,7 @@ class Submission
   field :been_before, type: Boolean
   field :reason, type: String
   field :extra, type: String
+  field :rejected, type: Boolean, default: false
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
@@ -37,6 +38,7 @@ class Submission
 
   scope :pending, -> { with_rates_count( { "$lt" => MIN_RATES_COUNT } ) }
   scope :rated, -> { with_rates_count( { "$gte" => MIN_RATES_COUNT } ) }
+  scope :rejected, -> { where(rejected: true) }
 
   def experience_technologies
     {

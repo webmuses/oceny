@@ -12,6 +12,10 @@ module Api
       render_collection(Submission.pending)
     end
 
+    def rejected
+      render_collection(Submission.rejected)
+    end
+
     private
 
     def render_collection(collection)
