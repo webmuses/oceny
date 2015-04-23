@@ -1,9 +1,5 @@
-class SubmissionResultSerializer < ActiveModel::Serializer
-  attributes :id, :fullname, :age, :email, :average_rate
-
-  def id
-    "#{object.id}"
-  end
+class SubmissionResultSerializer < SubmissionEachSerializer
+  attributes :average_rate
 
   def average_rate
     decorated.average_rate
@@ -11,7 +7,7 @@ class SubmissionResultSerializer < ActiveModel::Serializer
 
   private
 
-    def decorated
-      @decorated ||= object.decorate
-    end
+  def decorated
+    @decorated ||= object.decorate
+  end
 end

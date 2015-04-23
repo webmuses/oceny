@@ -1,7 +1,7 @@
 module Api
   class SubmissionsController < Api::BaseController
     def index
-      render json: Submission.all, each_serializer: SubmissionEachSerializer
+      render_collection(Submission.all)
     end
 
     def show
@@ -9,7 +9,13 @@ module Api
     end
 
     def pending
-      render json: Submission.pending, each_serializer: PendingSubmissionEachSerializer
+      render_collection(Submission.pending)
+    end
+
+    private
+
+    def render_collection(collection)
+      render json: collection, each_serializer: SubmissionEachSerializer
     end
   end
 end

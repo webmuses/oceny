@@ -1,0 +1,10 @@
+<div>
+  <ol>
+    {{#each submission in submissions}}
+      <li>
+        {{submission_link submission}}, wiek: {{submission.age}},
+        liczba ocen: {{submission.rates_count}}
+      </li>
+    {{/each}}
+  </ol>
+</div>
