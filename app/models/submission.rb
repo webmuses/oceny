@@ -27,7 +27,16 @@ class Submission
   has_many :rates
   has_many :comments
 
-  scope :pending, -> { not_in(id: Rate.all.map(:submission_id)) }
+  GROUP_BY_HASH = {
+    "$group" => {
+      "_id" => { "submission_id" => "$submission_id"},
+      "count" => { "$sum" => 1 }
+    }
+  }
+  MIN_RATES_COUNT = 2
+
+  scope :pending, -> { with_rates_count( { "$lt" => MIN_RATES_COUNT } ) }
+  scope :rated, -> { with_rates_count( { "$gte" => MIN_RATES_COUNT } ) }
 
   def experience_technologies
     {
@@ -63,5 +72,14 @@ class Submission
       'Windows',
       'Linux'
     ]
+  end
+
+  private
+
+  def self.with_rates_count(rates_count)
+    match_hash = { "$match" => { "count" => rates_count } }
+    grouped = Rate.collection.aggregate(GROUP_BY_HASH, match_hash)
+    ids = grouped.map { |v| v["_id"]["submission_id"] }
+    where(:id.in => ids)
   end
 end
