@@ -33,6 +33,7 @@ group :development, :test do
   gem 'better_errors', '~> 2.1.1'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'colored', '~> 1.2'
+  gem 'rspec-rails'
 end
 
 group :production do
@@ -46,3 +47,4 @@ gem 'omniauth-github', '~> 1.1.2'
 # configuration
 gem 'a9n', '~> 0.4.2'
 gem 'dotenv-rails', '~> 2.0.0'
+
