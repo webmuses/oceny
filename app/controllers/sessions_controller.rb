@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
   def create
     user = User.find_or_create_by(basic_user_attributes)
 
+    return not_found unless user.can_review?
+
     session[:user_id] = user.id
     redirect_to(dashboard_path)
   end
@@ -15,15 +17,15 @@ class SessionsController < ApplicationController
 
   protected
 
-    def basic_user_attributes
-      {
-        provider: auth['provider'],
-        uid: auth['uid'],
-        nickname: auth['info']['nickname']
-      }
-    end
+  def basic_user_attributes
+    {
+      provider: auth['provider'],
+      uid: auth['uid'],
+      nickname: auth['info']['nickname']
+    }
+  end
 
-    def auth
-      request.env['omniauth.auth']
-    end
+  def auth
+    request.env['omniauth.auth']
+  end
 end

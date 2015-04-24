@@ -1,2 +1,9 @@
 defaults:
   form_path: '/rails-girls-krakow-2015'
+  reviewers:
+    - lesniakania
+    - basiam
+    - szemek
+    - gitjul
+    - szynszyliszys
+
