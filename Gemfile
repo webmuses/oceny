@@ -34,6 +34,8 @@ group :development, :test do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'colored', '~> 1.2'
   gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'database_cleaner'
 end
 
 group :production do
