@@ -17,19 +17,19 @@
     %table
       %tr
         %th
-        - submission.experience_answers.each do |answer|
+        - Submission.experience_answers.each do |answer|
           %th= answer
-      - submission.experience_technologies.each do |symbol, technology|
+      - Submission.experience_technologies.each do |symbol, technology|
         %tr
           %td= technology
-          - submission.experience_answers.each do |answer|
+          - Submission.experience_answers.each do |answer|
             %td.answer
               %span= radio_button_tag("submission[experience][#{symbol}]", answer)
 
     = f.error :experience
 
-  = f.input :english, required: true, as: :radio_buttons, collection: submission.english_answers, label: 'How fluent are you in English?'
-  = f.input :os, required: true, as: :radio_buttons, collection: submission.os_answers, label: 'What operating system do you use?'
+  = f.input :english, required: true, as: :radio_buttons, collection: Submission.english_answers, label: 'How fluent are you in English?'
+  = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'What operating system do you use?'
   = f.input :been_before, required: true, as: :radio_buttons, label: 'Have you participated in Rails Girls before?'
   = f.input :reason, as: :text, required: true, label: 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?', input_html: { rows: 8 }
 

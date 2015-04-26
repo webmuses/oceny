@@ -2,8 +2,7 @@
   <ol>
     {{#each submission in submissions}}
       <li>
-        {{submission_link submission}}, wiek: {{submission.age}},
-        liczba ocen: {{submission.rates_count}}
+        {{submission_link submission}}, wiek: {{submission.age}}, średnia ocena: {{submission.average_rate}}, ilość ocen: {{submission.rates_count}}
       </li>
     {{/each}}
   </ol>

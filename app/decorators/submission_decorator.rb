@@ -3,15 +3,6 @@ class SubmissionDecorator < Draper::Decorator
 
   delegate_all
 
-  def average_rate
-    @rates = object.rates.map(&:value)
-    if @rates.present?
-      @rates.reduce(0.0, :+) / @rates.count
-    else
-      0.0
-    end
-  end
-
   def next
     return nil if position + 1 > list.count
 

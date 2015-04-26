@@ -2,9 +2,9 @@
 
 App.Router.map ()->
   @resource 'submissions', () ->
+  @resource 'submission', path: '/submissions/:id'
   @resource 'pending_submissions', path: '/submissions/pending'
   @resource 'rejected_submissions', path: '/submissions/rejected'
-  @resource 'submission', path: '/submissions/:id'
-  @route 'results', path: '/results'
+  @resource 'rated_submissions', path: '/submissions/rated'
   @resource 'form', () ->
     @route('edit')

@@ -1,4 +1,4 @@
-class SubmissionSingleSerializer < ActiveModel::Serializer
+class SubmissionSingleSerializer < SubmissionEachSerializer
   self.root = false
 
   attributes :id, :fullname, :email, :age, :about, :experience, :english, :os,
@@ -22,14 +22,4 @@ class SubmissionSingleSerializer < ActiveModel::Serializer
   def next_id
     decorated.next ? "#{decorated.next.id}" : nil
   end
-
-  def average_rate
-    decorated.average_rate
-  end
-
-  private
-
-    def decorated
-      @decorated ||= object.decorate
-    end
 end

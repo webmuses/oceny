@@ -14,6 +14,7 @@ class Submission
   field :reason, type: String
   field :extra, type: String
   field :rejected, type: Boolean, default: false
+  field :average_rate, type: Float
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
@@ -28,19 +29,24 @@ class Submission
   has_many :rates
   has_many :comments
 
-  GROUP_BY_HASH = {
-    "$group" => {
-      "_id" => { "submission_id" => "$submission_id"},
-      "count" => { "$sum" => 1 }
-    }
-  }
-  MIN_RATES_COUNT = 2
+  MIN_RATES_COUNT = 5
 
-  scope :pending, -> { with_rates_count( { "$lt" => MIN_RATES_COUNT } ) }
-  scope :rated, -> { with_rates_count( { "$gte" => MIN_RATES_COUNT } ) }
+  scope :pending, -> do
+    rated_ids = submission_ids
+    matched_ids = submission_ids(match_hash("$lt" => MIN_RATES_COUNT))
+
+    any_of({ :id.in => matched_ids, :rejected => false },
+           { :id.nin => rated_ids, :rejected => false })
+  end
+  scope :rated, -> do
+    matched_ids = submission_ids(match_hash("$gte" => MIN_RATES_COUNT))
+
+    where(:id.in => matched_ids, :rejected => false)
+  end
   scope :rejected, -> { where(rejected: true) }
 
-  def experience_technologies
+
+  def self.experience_technologies
     {
       html: 'HTML',
       css: 'CSS',
@@ -51,7 +57,7 @@ class Submission
     }
   end
 
-  def experience_answers
+  def self.experience_answers
     [
       'Never heard of it',
       'Heard of it',
@@ -60,7 +66,7 @@ class Submission
     ]
   end
 
-  def english_answers
+  def self.english_answers
     [
       'I don\'t speak English',
       'I know English well enough for basic communication',
@@ -68,7 +74,7 @@ class Submission
     ]
   end
 
-  def os_answers
+  def self.os_answers
     [
       'Mac OS X',
       'Windows',
@@ -76,12 +82,22 @@ class Submission
     ]
   end
 
+  def update_average_rate
+    values = rates.map(&:value)
+    return 0.0 unless values.present?
+
+    self.average_rate = values.reduce(0.0, :+) / values.count
+    self.save
+  end
+
   private
 
-  def self.with_rates_count(rates_count)
-    match_hash = { "$match" => { "count" => rates_count } }
-    grouped = Rate.collection.aggregate(GROUP_BY_HASH, match_hash)
-    ids = grouped.map { |v| v["_id"]["submission_id"] }
-    where(:id.in => ids)
+  def self.match_hash(rates_count)
+    { "$match" => { "count" => rates_count } }
+  end
+
+  def self.submission_ids(match_hash = nil)
+    grouped = Rate.aggregate(match_hash: match_hash)
+    grouped.map { |v| v["_id"]["submission_id"] }
   end
 end

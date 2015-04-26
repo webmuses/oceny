@@ -1,14 +1,10 @@
 module Api
   class RatesController < Api::BaseController
     def create
-      submission = Submission.find(params[:submission_id])
-
-      rate = Rate.find_or_create_by({
-        user: current_user,
-        submission: submission,
-        nickname: current_user.nickname
-      })
-      rate.update_attribute(:value, params[:value])
+      rate_creator = RateCreator.new(params[:submission_id],
+                                     current_user,
+                                     params[:value])
+      rate_creator.call
 
       render json: submission.rates
     end

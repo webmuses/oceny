@@ -16,6 +16,10 @@ module Api
       render_collection(Submission.rejected)
     end
 
+    def rated
+      render_collection(Submission.rated.order(:avarage_rate.desc))
+    end
+
     private
 
     def render_collection(collection)

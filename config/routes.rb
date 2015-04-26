@@ -8,11 +8,10 @@ Oceny::Application.routes.draw do
       resources :rates, only: [:create]
       resources :comments, only: [:create]
       collection do
-        get :pending, :rejected
+        get :pending, :rejected, :rated
       end
     end
 
-    resources :results, only: [:index]
     resource :form, only: [:show, :create, :update]
   end
 
