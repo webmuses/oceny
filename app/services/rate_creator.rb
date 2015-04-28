@@ -1,8 +1,8 @@
 class RateCreator
   attr_accessor :submission, :user, :value
 
-  def initialize(submission_id, user, value)
-    self.submission = Submission.find(submission_id)
+  def initialize(submission, user, value)
+    self.submission = submission
     self.user = user
     self.value = value
   end

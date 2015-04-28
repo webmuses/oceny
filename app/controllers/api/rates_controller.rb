@@ -1,7 +1,8 @@
 module Api
   class RatesController < Api::BaseController
     def create
-      rate_creator = RateCreator.new(params[:submission_id],
+      submission = Submission.find(params[:submission_id])
+      rate_creator = RateCreator.new(submission,
                                      current_user,
                                      params[:value])
       rate_creator.call
