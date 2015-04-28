@@ -17,7 +17,7 @@ module Api
     end
 
     def rated
-      render_collection(Submission.rated.order(:avarage_rate.desc))
+      render_collection(Submission.rated.desc(:average_rate))
     end
 
     private
