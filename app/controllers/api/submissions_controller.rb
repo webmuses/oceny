@@ -1,7 +1,7 @@
 module Api
   class SubmissionsController < Api::BaseController
     def index
-      render json: Submission.all, each_serializer: SubmissionEachSerializer
+      render json: Submission.order(:created_at.desc), each_serializer: SubmissionEachSerializer
     end
 
     def show
