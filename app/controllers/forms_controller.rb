@@ -12,8 +12,9 @@ class FormsController < ApplicationController
 
   def submit
     submission = Submission.new(submission_params)
+    submission_creator = SubmissionCreator.new(submission)
 
-    if submission.save
+    if submission_creator.call
       Mailing.after_submission(submission).deliver_now
       redirect_to(thanks_path)
     else
