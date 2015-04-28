@@ -1,8 +1,33 @@
 <div>
+  <div class='submission-header'>
+    <div>
+      Imię
+    </div>
+    <div>
+      Wiek
+    </div>
+    <div>
+      Średnia ocena
+    </div>
+    <div>
+      Ilość ocen
+    </div>
+  </div>
   <ol>
     {{#each submission in submissions}}
-      <li>
-        {{submission_link submission}}, wiek: {{submission.age}}, średnia ocena: {{submission.average_rate}}, ilość ocen: {{submission.rates_count}}
+      <li class='submission'>
+        <div>
+          {{submission_link submission}}
+        </div>
+        <div>
+          {{submission.age}}
+        </div>
+        <div>
+          {{submission.average_rate}}
+        </div>
+        <div>
+          {{submission.rates_count}}
+        </div>
       </li>
     {{/each}}
   </ol>

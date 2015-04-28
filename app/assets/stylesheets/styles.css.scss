@@ -124,4 +124,15 @@ span.date {
   }
 }
 
-
+.submission-header {
+  margin-left: 38px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+.submission-header, li.submission {
+  width: 812px;
+}
+.submission-header div, li.submission div {
+  display: inline-block;
+  width: 200px;
+}
