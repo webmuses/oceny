@@ -13,6 +13,8 @@ Oceny::Application.routes.draw do
     end
 
     resource :form, only: [:show, :create, :update]
+
+    get '/users/watching/:submission_id', to: "users#watching"
   end
 
   # sessions
