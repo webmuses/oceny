@@ -10,7 +10,7 @@ class SubmissionEachSerializer < ActiveModel::Serializer
   end
 
   def average_rate
-    format("%.2f", object.average_rate)
+    format("%.2f", object.average_rate) if object.average_rate
   end
 
   private

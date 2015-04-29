@@ -14,7 +14,7 @@ class Submission
   field :reason, type: String
   field :extra, type: String
   field :rejected, type: Boolean, default: false
-  field :average_rate, type: Float
+  field :average_rate, type: Float, default: 0.0
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
