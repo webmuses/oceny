@@ -7,7 +7,7 @@ module Api
         last_watched_submission_at: DateTime.now
       )
 
-      render json: User.current_watching_for(submission_id).to_a.map(&:nickname)
+      render json: User.current_watching_for(submission_id, current_user.id).to_a.map(&:nickname)
     end
   end
 end

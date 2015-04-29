@@ -10,9 +10,10 @@ class User
 
   has_many :rates
 
-  scope :current_watching_for, -> (submission_id) do
+  scope :current_watching_for, -> (submission_id, current_user_id) do
     where(:last_watched_submission_id => submission_id,
-          :last_watched_submission_at.gte => CURRENT_WATCHING_INTERVAL.ago)
+          :last_watched_submission_at.gte => CURRENT_WATCHING_INTERVAL.ago,
+          :nickname.not => current_user_id)
   end
 
   def can_review?
