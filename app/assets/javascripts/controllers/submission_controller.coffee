@@ -2,6 +2,8 @@ App.SubmissionController = Ember.ObjectController.extend
   setupController: (controller, submission) =>
     controller.set('model', submission)
 
+  defaultRates: [5, 4, 3, 2, 1, 0]
+
   actions:
     rate: (model, value) ->
       Ember.$
