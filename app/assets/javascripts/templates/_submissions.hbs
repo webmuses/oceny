@@ -1,34 +1,16 @@
-<div>
-  <div class='submission-header'>
-    <div>
-      Imię
-    </div>
-    <div>
-      Wiek
-    </div>
-    <div>
-      Średnia ocena
-    </div>
-    <div>
-      Ilość ocen
-    </div>
-  </div>
-  <ol>
-    {{#each submission in submissions}}
-      <li class='submission'>
-        <div>
-          {{submission_link submission}}
-        </div>
-        <div>
-          {{submission.age}}
-        </div>
-        <div>
-          {{submission.average_rate}}
-        </div>
-        <div>
-          {{submission.rates_count}}
-        </div>
-      </li>
-    {{/each}}
-  </ol>
+<div class='submission-header'>
+  <span>Imię</span>
+  <span>Wiek</span>
+  <span>Średnia ocena</span>
+  <span>Ilość ocen</span>
 </div>
+<ol class='submission-list'>
+  {{#each submission in submissions}}
+    <li>
+      <span> {{submission_link submission}} </span>
+      <span> {{submission.age}} </span>
+      <span> {{submission.average_rate}} </span>
+      <span> {{submission.rates_count}} </span>
+    </li>
+  {{/each}}
+</ol>

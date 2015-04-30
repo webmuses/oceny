@@ -146,14 +146,20 @@ span.date {
 }
 
 .submission-header {
-  margin-left: 38px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid;
+  padding: 0 0 10px 40px;
+  border-bottom: 1px dashed;
 }
-.submission-header, li.submission {
-  width: 812px;
+
+.submission-header, .submission-list li {
+  width: 100%;
 }
-.submission-header div, li.submission div {
+
+.submission-list li a {
+  display: inline-block;
+  padding: 0 .5rem .5rem;
+}
+
+.submission-header span, .submission-list li span {
   display: inline-block;
   width: 200px;
 }
