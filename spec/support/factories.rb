@@ -14,5 +14,9 @@ FactoryGirl.define do
   factory :rate do
     sequence(:nickname) { |n| "GithubUser#{n}" }
   end
-end
 
+  factory :user do
+    last_watched_submission_id { submission.id }
+    last_watched_submission_at { Time.new }
+  end
+end
