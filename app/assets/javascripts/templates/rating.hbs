@@ -2,7 +2,7 @@
 
 <p>
   {{#each rate in defaultRates}}
-    <button class='rate' {{action 'rate' model rate}} {{bind-attr data-value=rate}}>{{rate}}</button>
+    <button class='rate' {{action 'rate' model rate}}>{{rate}}</button>
   {{/each}}
 </p>
 
