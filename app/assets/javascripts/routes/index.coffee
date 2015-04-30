@@ -1,3 +1,3 @@
 App.IndexRoute = Ember.Route.extend
   beforeModel: () ->
-    @transitionTo('submissions');
+    @transitionTo('pending_submissions')
