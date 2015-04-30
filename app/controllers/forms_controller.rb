@@ -46,6 +46,6 @@ class FormsController < ApplicationController
   end
 
   def check_if_registration_open
-    redirect_to thanks_path unless Registration.open?
+    redirect_to closed_path unless Registration.open?
   end
 end
