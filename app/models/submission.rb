@@ -82,11 +82,15 @@ class Submission
     ]
   end
 
-  def update_average_rate
+  def calculate_average_rate
     values = rates.map(&:value)
     return 0.0 unless values.present?
 
-    self.average_rate = values.reduce(0.0, :+) / values.count
+    values.reduce(0.0, :+) / values.count
+  end
+
+  def update_average_rate
+    self.average_rate = calculate_average_rate
     self.save
   end
 

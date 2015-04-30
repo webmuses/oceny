@@ -2,14 +2,7 @@ require 'rails_helper'
 
 describe Judge::Service do
   describe "#call" do
-    let(:judge) { Judge::Service.new(submission, strategies) }
-
-    let(:strategies) do
-      [Judge::UnderAgeStrategy.new,
-       Judge::ProgrammingKnowledgeStrategy.new,
-       Judge::AlreadyAttendStrategy.new,
-       Judge::PoorEnglishStrategy.new]
-    end
+    let(:judge) { Judge::Service.new(submission) }
 
     before do
       judge.call

@@ -1,13 +1,19 @@
 class Judge::Service
-  attr_accessor :submission, :strategies
+  attr_accessor :submission
 
-  def initialize(submission, strategies)
+  STRATEGIES = [
+    Judge::UnderAgeStrategy.new,
+    Judge::ProgrammingKnowledgeStrategy.new,
+    Judge::AlreadyAttendStrategy.new,
+    Judge::PoorEnglishStrategy.new
+  ]
+
+  def initialize(submission)
     self.submission = submission
-    self.strategies = strategies
   end
 
   def call
-    strategies.each do |strategy|
+    STRATEGIES.each do |strategy|
       if strategy.should_reject?(submission)
         submission.update_attributes(rejected: true)
       end

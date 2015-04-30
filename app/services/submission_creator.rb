@@ -3,11 +3,7 @@ class SubmissionCreator
 
   def initialize(submission)
     self.submission = submission
-    strategies = [Judge::UnderAgeStrategy.new,
-                  Judge::ProgrammingKnowledgeStrategy.new,
-                  Judge::AlreadyAttendStrategy.new,
-                  Judge::PoorEnglishStrategy.new]
-    self.judge = Judge::Service.new(submission, strategies)
+    self.judge = Judge::Service.new(submission)
   end
 
   def call
