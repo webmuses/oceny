@@ -28,5 +28,6 @@ Oceny::Application.routes.draw do
     get '', to: 'forms#show', as: :form
     post '/submit', to: 'forms#submit', as: :submit
     get '/thanks', to: 'forms#thanks', as: :thanks
+    get '/closed', to: 'forms#closed', as: :closed
   end
 end

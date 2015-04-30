@@ -223,7 +223,10 @@ input[type=submit] {
 
   h1 { color: $rg-red; }
 
-  p { font-size: 1.25rem; }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+   }
 
   small {
     display: block;

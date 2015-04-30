@@ -26,6 +26,9 @@ class FormsController < ApplicationController
   def thanks
   end
 
+  def closed
+  end
+
   private
 
   def set_custom_headers
