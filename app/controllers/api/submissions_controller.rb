@@ -1,7 +1,7 @@
 module Api
   class SubmissionsController < Api::BaseController
     def index
-      render_collection(Submission.all)
+      render_collection(Submission.order(:created_at.asc))
     end
 
     def show
