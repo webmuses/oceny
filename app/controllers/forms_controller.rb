@@ -3,6 +3,7 @@ class FormsController < ApplicationController
 
   skip_before_action :authenticate
   before_action :set_custom_headers
+  before_action :check_if_registration_open, only: [:show, :submit]
 
   def show
     submission = Submission.new
@@ -39,5 +40,9 @@ class FormsController < ApplicationController
     params.require(:submission).permit(:fullname, :email, :age, :about, :os,
       :been_before, :reason, :english, :extra, :experience => [:html, :css, :js,
       :databases, :rails, :programming])
+  end
+
+  def check_if_registration_open
+    redirect_to thanks_path unless Registration.open?
   end
 end
