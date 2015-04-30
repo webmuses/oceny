@@ -11,8 +11,8 @@
     {{#each comment in comments}}
       <li>
         <strong>{{comment.nickname}}</strong>
-        <span class='date'>{{commentDate comment}}</span><br />
-        {{comment.body}}
+        <span class='date'>{{commentDate comment}}</span>
+        <div class='comment-body'>{{comment.body}}</div>
       </li>
     {{/each}}
   </ul>

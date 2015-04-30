@@ -73,8 +73,24 @@ button.rate.active {
     padding: 0;
   }
 
+  li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
   textarea, button {
-    float: left;
+    display: block;
+  }
+
+  textarea {
+    line-height: 1.5;
+    padding: 8px;
+    font-size: .8rem;
+  }
+
+  button {
+    margin-top: 1rem;
+    cursor: pointer;
   }
 
   .clear {
@@ -85,6 +101,11 @@ button.rate.active {
 span.date {
   font-size: 11px;
   color: #555;
+}
+
+.comment-body {
+  margin-top: .25rem;
+  font-size: .8rem;
 }
 
 .submission > table {
