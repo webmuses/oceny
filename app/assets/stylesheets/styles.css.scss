@@ -148,6 +148,7 @@ span.date {
 .submission-header {
   padding: 0 0 10px 40px;
   border-bottom: 1px dashed;
+  box-sizing: border-box;
 }
 
 .submission-header, .submission-list li {
