@@ -8,7 +8,9 @@
   </p>
 
   {{#if rates}}
-    <p>Średnia ocen: {{average_rate}}</p>
+    {{#unless pending_submission}}
+      <p>Średnia ocen: {{average_rate}}</p>
+    {{/unless}}
     <ul>
       {{#each rate in rates}}
         <li>{{rate.nickname}}: {{rate.value}}</li>
