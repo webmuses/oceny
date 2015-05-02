@@ -1,8 +1,8 @@
 class SubmissionSingleSerializer < SubmissionEachSerializer
   self.root = false
 
-  attributes :id, :fullname, :email, :age, :about, :experience, :english, :os,
-    :been_before, :reason, :extra, :position, :prev_id, :next_id, :average_rate
+  attributes :about, :experience, :english, :os, :been_before, :reason, :extra,
+    :position, :prev_id, :next_id, :status
 
   has_many :rates
   has_many :comments
@@ -21,5 +21,13 @@ class SubmissionSingleSerializer < SubmissionEachSerializer
 
   def next_id
     decorated.next ? "#{decorated.next.id}" : nil
+  end
+
+  def status
+    return "odrzucone" if object.rejected?
+
+    return "ocenione (#{rates_count})" if rates_count >= Submission::MIN_RATES_COUNT
+
+    "oczekuje (liczba ocen: #{rates_count})"
   end
 end
