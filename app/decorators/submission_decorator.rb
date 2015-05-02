@@ -20,6 +20,6 @@ class SubmissionDecorator < Draper::Decorator
   end
 
   def list
-    @list ||= object.class.order(:id.asc).to_a
+    @list ||= object.class.pending.to_a
   end
 end
