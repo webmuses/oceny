@@ -4,6 +4,8 @@ App.ApplicationView = Ember.View.extend
     this.$().focus()
 
   keyDown: (event) =>
+    return if event.target.type == 'textarea'
+
     App.Navigator.handle(event.keyCode)
 
 App.Navigator =
