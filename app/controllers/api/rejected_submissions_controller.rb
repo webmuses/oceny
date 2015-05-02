@@ -1,7 +1,7 @@
 module Api
   class RejectedSubmissionsController < Api::SubmissionsBaseController
     def index
-      render_collection(Submission.rejected.order(:created_at.asc))
+      render_collection(Submission.rejected)
     end
   end
 end

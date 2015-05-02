@@ -1,2 +1,2 @@
-Ember.Handlebars.helper 'commentDate', (comment) =>
-  moment(comment.created_at).format('LLL')
+Ember.Handlebars.helper 'formattedDate', (date) =>
+  moment(date).format('LLL')

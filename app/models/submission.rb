@@ -31,6 +31,8 @@ class Submission
 
   MIN_RATES_COUNT = 5
 
+  default_scope -> { order(:created_at.asc) }
+
   scope :pending, -> do
     rated_ids = submission_ids
     matched_ids = submission_ids(match_hash("$lt" => MIN_RATES_COUNT))

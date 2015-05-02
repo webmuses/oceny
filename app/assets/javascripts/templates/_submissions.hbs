@@ -3,6 +3,7 @@
   <span>Wiek</span>
   <span>Średnia ocena</span>
   <span>Ilość ocen</span>
+  <span>Data rejestracji</span>
 </div>
 <ol class='submission-list'>
   {{#each submission in submissions}}
@@ -11,6 +12,7 @@
       <span> {{submission.age}} </span>
       <span> {{submission.average_rate}} </span>
       <span> {{submission.rates_count}} </span>
+      <span> {{formattedDate submission.created_at}} </span>
     </li>
   {{/each}}
 </ol>

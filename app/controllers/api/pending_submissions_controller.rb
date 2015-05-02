@@ -1,7 +1,7 @@
 module Api
   class PendingSubmissionsController < Api::SubmissionsBaseController
     def index
-      render_collection(Submission.pending.order(:created_at.asc))
+      render_collection(Submission.pending)
     end
 
     def show

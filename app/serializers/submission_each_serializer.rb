@@ -1,5 +1,5 @@
 class SubmissionEachSerializer < ActiveModel::Serializer
-  attributes :id, :fullname, :age, :email, :rates_count, :average_rate
+  attributes :id, :fullname, :age, :email, :rates_count, :average_rate, :created_at
 
   def id
     "#{object.id}"
