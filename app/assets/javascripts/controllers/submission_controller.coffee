@@ -1,11 +1,14 @@
 App.SubmissionController = Ember.ObjectController.extend
   defaultRates: [5, 4, 3, 2, 1, 0]
 
+  submissionsUrl: (model) ->
+    "/api/submissions/#{model.id}.json"
+    
   actions:
     rate: (model, value) ->
       Ember.$
-        .when(Ember.$.post("/api/submissions/#{model.id}/rates.json", value: value))
-        .then(Ember.$.get("/api/submissions/#{model.id}.json", (data) ->
+        .when(Ember.$.post("/api/submissions/#{model.id}/rates.json" , value: value))
+        .then(Ember.$.get(@submissionsUrl(model), (data) ->
           Ember.set(model, 'rates', data.rates)
           Ember.set(model, 'average_rate', data.average_rate)
       ))
