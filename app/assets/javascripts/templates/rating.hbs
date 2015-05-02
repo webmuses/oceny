@@ -1,18 +1,20 @@
-<h2>Oceny</h2>
+<div class='rating'>
+  <h2>Oceny</h2>
 
-<p>
-  {{#each rate in defaultRates}}
-    <button class='rate' {{action 'rate' model rate}}>{{rate}}</button>
-  {{/each}}
-</p>
-
-{{#if rates}}
-  <p>Średnia ocen: {{average_rate}}</p>
-  <ul>
-    {{#each rate in rates}}
-      <li>{{rate.nickname}}: {{rate.value}}</li>
+  <p>
+    {{#each rate in defaultRates}}
+      <button class='rate' {{action 'rate' model rate}}>{{rate}}</button>
     {{/each}}
-  </ul>
-{{else}}
-  <p>Brak ocen.</p>
-{{/if}}
+  </p>
+
+  {{#if rates}}
+    <p>Średnia ocen: {{average_rate}}</p>
+    <ul>
+      {{#each rate in rates}}
+        <li>{{rate.nickname}}: {{rate.value}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>Brak ocen.</p>
+  {{/if}}
+</div>

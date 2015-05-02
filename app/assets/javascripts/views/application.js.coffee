@@ -1,4 +1,7 @@
 App.ApplicationView = Ember.View.extend
+  constructor: ->
+    $('#textarea').blur()
+
   didInsertElement: ->
     this.$().attr(tabindex: 1)
     this.$().focus()

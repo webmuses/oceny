@@ -1,21 +1,23 @@
-<h2>Komentarze</h2>
+<div class='comments'>
+  <h2>Komentarze</h2>
 
-<form id='comment'>
-  <textarea id='body'></textarea>
-  <button {{action 'comment' model}}>Dodaj</button>
-  <div class="clear"></div>
-</form>
+  <form id='comment'>
+    <textarea id='body'></textarea>
+    <button {{action 'comment' model}}>Dodaj</button>
+    <div class="clear"></div>
+  </form>
 
-{{#if comments}}
-  <ul>
-    {{#each comment in comments}}
-      <li>
-        <strong>{{comment.nickname}}</strong>
-        <span class='date'>{{formattedDate comment.created_at}}</span>
-        <div class='comment-body'>{{comment.body}}</div>
-      </li>
-    {{/each}}
-  </ul>
-{{else}}
-  <p>Brak komentarzy.</p>
-{{/if}}
+  {{#if comments}}
+    <ul>
+      {{#each comment in comments}}
+        <li>
+          <strong>{{comment.nickname}}</strong>
+          <span class='date'>{{formattedDate comment.created_at}}</span>
+          <div class='comment-body'>{{comment.body}}</div>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>Brak komentarzy.</p>
+  {{/if}}
+</div>
