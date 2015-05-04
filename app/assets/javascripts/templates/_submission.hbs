@@ -1,5 +1,18 @@
-Inni przeglądający to zgłoszenie: <div id="current-watching-users"></div>
+{{#if usersWatching}}
+  <div id="current-watching-users">
+    Inni przeglądający to zgłoszenie:
+    <ul>
+      {{#each nickname in usersWatching}}
+        <li>{{nickname}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+
 
 <div class='submission'>
   {{partial "submission_body"}}
 </div>
+
+{{'activateWatcher' model}}
+

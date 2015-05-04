@@ -1,7 +1,7 @@
 class App.OnlineUsersWatcher
-  run: (submissionId) ->
+  run: (submission) ->
     callback = =>
-      @updateOnlineUsers(submissionId)
+      @updateOnlineUsers(submission)
 
     callback()
 
@@ -10,10 +10,10 @@ class App.OnlineUsersWatcher
   stop: ->
     clearInterval(@callbackId)
 
-  updateOnlineUsers: (submissionId) =>
-    path = "/api/users/watching/#{submissionId}.json"
+  updateOnlineUsers: (submission) =>
+    path = "/api/users/watching/#{submission.id}.json"
     Ember.$.getJSON(path).then (response) ->
       users = response["users"]
-      $("#current-watching-users").text(users.join(", "))
+      Ember.set(submission, 'usersWatching', users)
 
 window.watcher = new App.OnlineUsersWatcher()
