@@ -1,38 +1,44 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
+gem 'rails'
 
-gem 'rails', '~> 4.2.1'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'uglifier'
 
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails', '~> 4.0.3'
-gem 'sass-rails', '~> 5.0.1'
-gem 'uglifier', '~> 2.7.1'
+gem 'active_model_serializers'
+gem 'draper'
+gem 'ember-rails'
+gem 'ember-source'
+gem 'handlebars_assets'
+gem 'haml'
+gem 'momentjs-rails'
+gem 'mongoid', '~> 5'
+gem 'newrelic_rpm'
+gem 'passenger'
+gem 'pry-rails'
+gem 'responders'
+gem 'simple_form'
 
-gem 'active_model_serializers', '~> 0.9.3'
-gem 'draper', '~> 2.1.0'
-gem 'ember-rails', '~> 0.17.0'
-gem 'ember-source', '~> 1.10.0'
-gem 'haml', '~> 4.0.6'
-gem 'handlebars-source', '~> 3.0.0'
-gem 'momentjs-rails', '~> 2.9.0'
-gem 'mongoid', '~> 4.0.2'
-gem 'newrelic_rpm', '~> 3.11.1.284'
-gem 'passenger', '~> 5.0.6'
-gem 'pry-rails', '~> 0.3.3'
-gem 'responders', '~> 2.1.0'
-gem 'simple_form', '~> 3.1.0'
+# authentication
+gem 'omniauth'
+gem 'omniauth-github'
+
+# configuration
+gem 'a9n'
+gem 'dotenv-rails'
 
 group :development do
-  gem 'letter_opener', '~> 1.3.0'
-  gem 'meta_request', '~> 0.3.4'
+  gem 'letter_opener'
+  gem 'meta_request'
 end
 
 group :development, :test do
-  gem 'awesome_print', '~> 1.6.1'
-  gem 'better_errors', '~> 2.1.1'
-  gem 'binding_of_caller', '~> 0.7.2'
-  gem 'colored', '~> 1.2'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'colored'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'database_cleaner'
@@ -43,14 +49,5 @@ group :test do
 end
 
 group :production do
-  gem 'rails_12factor', '~> 0.0.3'
+  gem 'rails_12factor'
 end
-
-# authentication
-gem 'omniauth', '~> 1.2.2'
-gem 'omniauth-github', '~> 1.1.2'
-
-# configuration
-gem 'a9n', '~> 0.4.2'
-gem 'dotenv-rails', '~> 2.0.0'
-
