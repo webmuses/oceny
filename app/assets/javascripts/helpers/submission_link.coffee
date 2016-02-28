@@ -1,4 +1,4 @@
-Ember.Handlebars.helper 'submission_link', (submission, options) =>
+Ember.Helper.helper 'submission_link', (submission, options) =>
   id = submission.id
   name = Handlebars.Utils.escapeExpression(submission.fullname)
   scope = 'submissions'

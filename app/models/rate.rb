@@ -21,6 +21,6 @@ class Rate
     match_hash = opts[:match_hash]
     args = [GROUP_BY_HASH]
     args << match_hash if match_hash
-    Rate.collection.aggregate(*args)
+    Rate.collection.aggregate([*args])
   end
 end

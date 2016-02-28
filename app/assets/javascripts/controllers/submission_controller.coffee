@@ -1,9 +1,9 @@
-App.SubmissionController = Ember.ObjectController.extend
+App.SubmissionController = Ember.Controller.extend
   defaultRates: [5, 4, 3, 2, 1, 0]
 
   submissionsUrl: (model) ->
     "/api/submissions/#{model.id}.json"
-    
+
   actions:
     rate: (model, value) ->
       Ember.$

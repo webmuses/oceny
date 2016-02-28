@@ -1,11 +1,11 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 App.Router.map ()->
-  @resource 'submissions', () ->
-  @resource 'submission', path: '/submissions/:id'
-  @resource 'pending_submissions', path: '/submissions/pending'
-  @resource 'pending_submission', path: '/pending_submissions/:id'
-  @resource 'rejected_submissions', path: '/submissions/rejected'
-  @resource 'rated_submissions', path: '/submissions/rated'
-  @resource 'form', () ->
+  @route 'submissions', { resetNamespace: true, path: '/' },  () ->
+  @route 'submission', { resetNamespace: true , path: '/submissions/:id' }
+  @route 'pending_submissions', { resetNamespace: true , path: '/submissions/pending'}
+  @route 'pending_submission', { resetNamespace: true , path: '/pending_submissions/:id'}
+  @route 'rejected_submissions', { resetNamespace: true , path: '/submissions/rejected'}
+  @route 'rated_submissions', { resetNamespace: true , path: '/submissions/rated'}
+  @route 'form', { resetNamespace: true }, () ->
     @route('edit')

@@ -104,6 +104,6 @@ class Submission
 
   def self.submission_ids(match_hash = nil)
     grouped = Rate.aggregate(match_hash: match_hash)
-    grouped.map { |v| v["_id"]["submission_id"] }
+    grouped.map{|v| v["_id"]["submission_id"] }
   end
 end

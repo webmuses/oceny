@@ -3,12 +3,12 @@
 <head>
   <title>Oceny</title>
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= javascript_tag do %>
     window.currentWatchingInteval = <%= User::CURRENT_WATCHING_INTERVAL * 1000 %>;
   <% end %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

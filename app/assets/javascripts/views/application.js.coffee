@@ -1,4 +1,4 @@
-App.ApplicationView = Ember.View.extend
+App.ApplicationView = Ember.Component.extend
   constructor: ->
     $('#textarea').blur()
 
