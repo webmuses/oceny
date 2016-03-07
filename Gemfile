@@ -9,6 +9,7 @@ gem 'sass-rails'
 gem 'uglifier'
 
 gem 'active_model_serializers'
+gem 'delayed_job_mongoid'
 gem 'draper'
 gem 'ember-rails'
 gem 'ember-source'

@@ -16,7 +16,7 @@ class FormsController < ApplicationController
     submission_creator = SubmissionCreator.new(submission)
 
     if submission_creator.call
-      #Mailing.after_submission(submission).deliver_now
+      Mailing.after_submission(submission.id.to_s).deliver_later
       redirect_to(thanks_path)
     else
       render :show, locals: { submission: submission }

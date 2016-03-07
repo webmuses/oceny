@@ -30,5 +30,6 @@ module Oceny
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join('app/assets/fonts')
     config.assets.precompile += %w( form.css )
+    config.active_job.queue_adapter = :delayed_job
   end
 end
