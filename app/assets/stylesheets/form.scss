@@ -54,7 +54,7 @@ header {
   }
 
   a, a:visited {
-    color: white;
+    color: $rg-red;
 
     &:hover { color: $rg-red; }
   }
@@ -66,9 +66,10 @@ header {
   @media (min-width: 1024px) {
     position: relative;
     height: 500px;
-    background: url(/assets/rgkrk-banner.png) center top no-repeat;
-    background-size: cover;
+    background: url(/assets/rails-girls-krakow-2016.png) center top no-repeat;
+    background-size: auto 100%;
     padding-top: 1rem;
+    margin-top: 1rem;
 
     h1 { display: none; }
 
@@ -79,14 +80,12 @@ header {
 
     .date {
       letter-spacing: -.125rem;
-      background: white;
       color: $rg-red;
-      padding: .25rem 3.65rem .25rem .25rem;
       display: inline-block;
       font-size: 2.3rem;
       position: absolute;
-      right: 0;
-      top: 6.5rem;
+      right: 1rem;
+      top: 2.5rem;
     }
   }
 }
