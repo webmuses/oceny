@@ -6,6 +6,7 @@ class Submission
   field :fullname, type: String
   field :email, type: String
   field :age, type: Integer
+  field :codecademy_username, type: String
   field :about, type: String
   field :experience, type: Hash
   field :english, type: String
@@ -18,6 +19,7 @@ class Submission
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :codecademy_username, presence: true
   validates :age, presence: true
   validates :about, presence: true
   validates :experience, presence: { message: 'please select answers for all technologies' }
