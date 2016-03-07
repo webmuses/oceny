@@ -1,7 +1,7 @@
-{{partial "submission"}}
+{{partial "submission_view"}}
 <div class='navigation'>
-  {{#link-to "pending_submission" prev_id id='prev' class='button prev'}} poprzednie zgłoszenie {{/link-to}}
-  {{#link-to "pending_submission" next_id id='next' class='button next'}} następne zgłoszenie {{/link-to}}
+  {{#link-to "pending_submission" model.prev_id id='prev' class='button prev'}} poprzednie zgłoszenie {{/link-to}}
+  {{#link-to "pending_submission" model.next_id id='next' class='button next'}} następne zgłoszenie {{/link-to}}
 </div>
 {{partial 'rating'}}
 {{partial 'comments'}}

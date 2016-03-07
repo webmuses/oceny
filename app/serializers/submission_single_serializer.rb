@@ -2,7 +2,7 @@ class SubmissionSingleSerializer < SubmissionEachSerializer
   self.root = false
 
   attributes :about, :experience, :english, :os, :been_before, :reason, :extra,
-             :displayed_position, :status
+             :displayed_position, :status, :codecademy_username
 
   has_many :rates
   has_many :comments

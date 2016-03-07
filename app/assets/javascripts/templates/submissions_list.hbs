@@ -8,11 +8,11 @@
 <ol class='submission-list'>
   {{#each model.submissions as |submission|}}
     <li>
-      <span>{{submissionLink submission}}</span>
+      <span><a href='#/pending_submissions/{{submission.id}}'>{{submission.fullname}}</a></span>
       <span>{{submission.age}}</span>
       <span>{{submission.average_rate}}</span>
       <span>{{submission.rates_count}}</span>
-      <span>{{formattedDate submission.created_at}}</span>
+      <span>{{submission.created_at}}</span>
     </li>
   {{/each}}
 </ol>

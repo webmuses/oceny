@@ -5,7 +5,7 @@
       <button class='rate' {{action 'rate' model rate}}>{{rate}}</button>
     {{/each}}
   </p>
-  {{#if rates}}
+  {{#if model.rates}}
     {{#unless pending_submission}}
       <p>Średnia ocen: {{average_rate}}</p>
     {{/unless}}
