@@ -29,6 +29,28 @@ describe Judge::Service do
       it { is_expected.to be true }
     end
 
+    shared_examples_for "too poor at" do |technology|
+      context "submission knows #{technology} too poor" do
+        let(:experience) do
+          answer = Submission.experience_answers.first
+          default_experience.merge(technology => answer)
+        end
+        let(:submission) { create(:submission, experience: experience) }
+
+        it { is_expected.to be true }
+      end
+    end
+
+    shared_examples_for "good at" do |technology|
+      let(:experience) do
+        answer = Submission.experience_answers.last
+        default_experience.merge(technology => answer)
+      end
+      let(:submission) { create(:submission, experience: experience) }
+
+      it { is_expected.to be false }
+    end
+
     shared_examples_for "too good at" do |technology|
       let(:experience) do
         answer = Submission.experience_answers.last
@@ -39,11 +61,13 @@ describe Judge::Service do
       it { is_expected.to be true }
     end
 
+    it_behaves_like "too poor at", "html"
+    it_behaves_like "too poor at", "css"
+
+    it_behaves_like "good at", "js"
+    it_behaves_like "good at", "databases"
+    it_behaves_like "good at", "programming"
+
     it_behaves_like "too good at", "rails"
-    it_behaves_like "too good at", "html"
-    it_behaves_like "too good at", "css"
-    it_behaves_like "too good at", "js"
-    it_behaves_like "too good at", "databases"
-    it_behaves_like "too good at", "programming"
   end
 end

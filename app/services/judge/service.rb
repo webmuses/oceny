@@ -3,7 +3,8 @@ class Judge::Service
 
   STRATEGIES = [
     Judge::UnderAgeStrategy.new,
-    Judge::ProgrammingKnowledgeStrategy.new,
+    Judge::RailsKnowledgeStrategy.new,
+    Judge::HtmlCssKnowledgeStrategy.new,
     Judge::AlreadyAttendStrategy.new,
     Judge::PoorEnglishStrategy.new
   ]
