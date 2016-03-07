@@ -6,13 +6,13 @@
   <span>Data rejestracji</span>
 </div>
 <ol class='submission-list'>
-  {{#each submission in submissions}}
+  {{#each submission in model}}
     <li>
-      <span> {{submission_link submission}} </span>
-      <span> {{submission.age}} </span>
-      <span> {{submission.average_rate}} </span>
-      <span> {{submission.rates_count}} </span>
-      <span> {{formattedDate submission.created_at}} </span>
+      <span>{{submission_link submission}}</span>
+      <span>{{submission.age}}</span>
+      <span>{{submission.average_rate}}</span>
+      <span>{{submission.rates_count}}</span>
+      <span>{{formattedDate submission.created_at}}</span>
     </li>
   {{/each}}
 </ol>

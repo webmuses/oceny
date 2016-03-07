@@ -1,12 +1,10 @@
 <div class='comments'>
   <h2>Komentarze</h2>
-
   <form id='comment'>
     <textarea id='body'></textarea>
     <button {{action 'comment' model}}>Dodaj</button>
     <div class="clear"></div>
   </form>
-
   {{#if comments}}
     <ul>
       {{#each comment in comments}}
