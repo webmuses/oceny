@@ -7,7 +7,7 @@
   </form>
   {{#if comments}}
     <ul>
-      {{#each comment in comments}}
+      {{#each model.comments as |comment|}}
         <li>
           <strong>{{comment.nickname}}</strong>
           <span class='date'>{{formattedDate comment.created_at}}</span>

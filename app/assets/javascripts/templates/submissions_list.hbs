@@ -6,7 +6,7 @@
   <span>Data rejestracji</span>
 </div>
 <ol class='submission-list'>
-  {{#each submission in model}}
+  {{#each model.submissions as |submission|}}
     <li>
       <span>{{submission_link submission}}</span>
       <span>{{submission.age}}</span>

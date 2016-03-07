@@ -1,7 +1,7 @@
 <div class='rating'>
   <h2>Oceny</h2>
   <p>
-    {{#each rate in defaultRates}}
+    {{#each defaultRates as |rate|}}
       <button class='rate' {{action 'rate' model rate}}>{{rate}}</button>
     {{/each}}
   </p>
@@ -10,7 +10,7 @@
       <p>Średnia ocen: {{average_rate}}</p>
     {{/unless}}
     <ul>
-      {{#each rate in rates}}
+      {{#each model.rates as |rate|}}
         <li>{{rate.nickname}}: {{rate.value}}</li>
       {{/each}}
     </ul>

@@ -1,3 +1,3 @@
-Ember.Helper.helper 'formattedDate', (date) =>
+Ember.Helper.helper (date) =>
   moment(date).format('LLL')
 
