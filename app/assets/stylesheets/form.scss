@@ -219,7 +219,9 @@ input[type=submit] {
 .thanks {
   margin-top: 2rem;
   text-align: center;
-
+  img {
+    max-width: 300px;
+  }
   h1 { color: $rg-red; }
 
   p {
