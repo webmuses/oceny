@@ -9,18 +9,27 @@
   = f.input :age, as: :integer, required: true, input_html: { min: 0 }
   .input
     = f.label :codecademy_username, required: true
-    %br
-    %span.hint
-      You are expected to complete
-      %strong
-        at least 6 units
-      of Ruby course at CodeCademy.
-      %br
-      To do so, register at
-      = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby'
-      and start
-      = link_to 'the course.', 'https://www.codecademy.com/learn/ruby'
-      Once you've completed, give us your CodeCademy username here.
+    %div
+      %p.hint
+        You are expected to complete
+        %strong
+          at least 6 units
+        of
+        = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby'
+        = '.'
+      %p.hint
+        To do so, register at
+        = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby'
+        and provide us with your CodeCademy username here.
+      %p.hint
+        You have time to do the units till the end of the registration.
+        We will start evalutaing submissions from the
+        %strong
+          April 1st
+        = '.'
+        %br
+        Just have in mind, that having this finished by then is main factor that
+        we would take into consideration while evaluating your application.
     = f.text_field :codecademy_username
     = f.error :codecademy_username
 
