@@ -11,28 +11,24 @@
     = f.label :codecademy_username, required: true
     %div
       %p.hint
-        You are expected to complete
+        We would like you to complete
         %strong
           at least 6 units
         of
         = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
         = '.'
-      %p.hint
-        To do so, register at
+        To do it, please register at
         = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby', target: '_blank'
-        and provide us with your CodeCademy username here.
-      %p.hint
-        You have time to do the units till the end of the registration.
-        We will start evalutaing submissions from the
-        %strong
-          April 1st
-        = '.'
-        %br
-        Just have in mind, that having this finished by then is main factor that
-        we would take into consideration while evaluating your application.
+        and put your username below, so we can verify your progress.
     = f.text_field :codecademy_username
     = f.error :codecademy_username
-
+    %div
+      %p.note
+        Note: You can finish registration now and complete the course later.
+        We will start evalutaing submissions on the
+        %strong
+          2nd of April
+        = '.'
   = f.input :about, as: :text, required: true, label: 'Who are you? Tell us a little bit about yourself', input_html: { rows: 2 }
 
   .input
