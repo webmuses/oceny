@@ -1,7 +1,7 @@
 %header
   %h1 Rails Girls Kraków
   %p.date 15-16 April 2016
-  = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow'
+  = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow', target: '_blank'
 
 = simple_form_for(submission, url: submit_path) do |f|
   = f.input :fullname, required: true
@@ -15,11 +15,11 @@
         %strong
           at least 6 units
         of
-        = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby'
+        = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
         = '.'
       %p.hint
         To do so, register at
-        = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby'
+        = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby', target: '_blank'
         and provide us with your CodeCademy username here.
       %p.hint
         You have time to do the units till the end of the registration.
