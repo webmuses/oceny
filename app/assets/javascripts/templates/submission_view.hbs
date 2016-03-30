@@ -1,8 +1,8 @@
-{{#if usersWatching}}
+{{#if model.usersWatching}}
   <div id="current-watching-users">
     Inni przeglądający to zgłoszenie:
     <ul>
-      {{#each nickname in usersWatching}}
+      {{#each model.usersWatching as |nickname|}}
         <li>{{nickname}}</li>
       {{/each}}
     </ul>
