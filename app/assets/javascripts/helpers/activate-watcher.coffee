@@ -1,5 +1,7 @@
-activateWatcher = (submission) =>
+activateWatcher = (params) =>
+  submission = params[0]
   window.watcher.stop()
   window.watcher.run(submission)
   null
-Ember.Helper.helper(activateWatcher)
+
+App.ActivateWatcherHelper = Ember.Helper.helper(activateWatcher)

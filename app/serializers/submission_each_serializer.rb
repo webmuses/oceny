@@ -5,10 +5,6 @@ class SubmissionEachSerializer < ActiveModel::Serializer
     "#{object.id}"
   end
 
-  def created_at
-    object.created_at.strftime("%d-%m-%Y %H:%M:")
-  end
-
   def rates_count
     object.rates.count
   end

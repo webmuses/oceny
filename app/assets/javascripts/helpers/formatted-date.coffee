@@ -1,5 +1,6 @@
-formattedDate = (date) =>
+formattedDate = (params) =>
+  date = params[0]
   moment(date).format('LLL')
 
-Ember.Helper.helper(formattedDate)
+App.FormattedDateHelper = Ember.Helper.helper(formattedDate)
 
