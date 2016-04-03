@@ -160,6 +160,8 @@ GEM
     mongoid-compatibility (0.3.1)
       activesupport
       mongoid (>= 2.0)
+    mongoid-enum (0.4.0)
+      mongoid (~> 5.0)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -300,6 +302,7 @@ DEPENDENCIES
   meta_request
   momentjs-rails
   mongoid (~> 5)
+  mongoid-enum
   newrelic_rpm
   omniauth
   omniauth-github

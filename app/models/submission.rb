@@ -2,6 +2,7 @@ class Submission
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
+  include Mongoid::Enum
 
   field :fullname, type: String
   field :email, type: String
@@ -16,6 +17,7 @@ class Submission
   field :extra, type: String
   field :rejected, type: Boolean, default: false
   field :average_rate, type: Float, default: 0.0
+  enum :codecademy_status, [:pending, :confirmed, :failed]
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
