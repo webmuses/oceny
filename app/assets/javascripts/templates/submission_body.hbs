@@ -5,6 +5,10 @@
     <td id="submission-status">{{model.status}}</td>
   </tr>
   <tr>
+    <th>Codecademy Status</th>
+    <td>{{model.codecademy_status}}</td>
+  </tr>
+  <tr>
     <th>Data rejestracji</th>
     <td>{{FormattedDate model.created_at}}</td>
   </tr>
@@ -76,10 +80,6 @@
     <td>
       <a href="https://www.codecademy.com/{{model.codecademy_username}}" id='codecademy' target="_blank"> {{model.codecademy_username}} </a>
     </td>
-  </tr>
-  <tr>
-    <th>Codecademy Status</th>
-    <td>{{model.codecademy_status}}</td>
   </tr>
 </table>
 <br/>
