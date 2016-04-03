@@ -2,7 +2,7 @@ defaults:
   form_path: '/rails-girls-krakow-2016'
   registration:
     from: 06.03.2016
-    to: 01.04.2016
+    to: 04.04.2016
   reviewers:
     - lesniakania
     - informatykgosia
