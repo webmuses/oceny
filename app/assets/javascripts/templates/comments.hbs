@@ -10,7 +10,7 @@
       {{#each model.comments as |comment|}}
         <li>
           <strong>{{comment.nickname}}</strong>
-          <span class='date'>{{comment.created_at}}</span>
+          <span class='date'>{{FormattedDate comment.created_at}}</span>
           <div class='comment-body'>{{comment.body}}</div>
         </li>
       {{/each}}
