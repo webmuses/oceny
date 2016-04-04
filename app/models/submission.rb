@@ -33,7 +33,7 @@ class Submission
   has_many :rates
   has_many :comments
 
-  MIN_RATES_COUNT = 5
+  MIN_RATES_COUNT = 3
 
   default_scope -> { order(:created_at.asc) }
 
