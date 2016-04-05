@@ -10,6 +10,8 @@ class Rate
 
   scope :for_user, ->(user) { where(user_id: user.id) }
 
+  validates :nickname, uniqueness: { scope: :submission_id }
+
   GROUP_BY_HASH = {
     "$group" => {
       "_id" => { "submission_id" => "$submission_id"},
