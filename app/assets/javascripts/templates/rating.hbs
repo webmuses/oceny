@@ -7,7 +7,7 @@
   </p>
   {{#if model.rates}}
     {{#unless pending_submission}}
-      <p>Średnia ocen: {{average_rate}}</p>
+      <p>Średnia ocen: {{model.average_rate}}</p>
     {{/unless}}
     <ul>
       {{#each model.rates as |rate|}}
