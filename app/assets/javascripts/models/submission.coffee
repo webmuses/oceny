@@ -1,2 +1,3 @@
 App.Submission = DS.Model.extend()
-App.Submission.minRatesCount = 5
+# Heh, it should not be dupplicated there.... : (
+App.Submission.minRatesCount = 3
