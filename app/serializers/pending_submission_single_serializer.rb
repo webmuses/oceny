@@ -20,18 +20,18 @@ class PendingSubmissionSingleSerializer < SubmissionSingleSerializer
   end
 
   def next_el
-    position ||= 0
+    pos = position || 0
 
-    return nil if position + 1 > list.count
+    return nil if pos + 1 > list.count
 
-    list[position + 1]
+    list[pos + 1]
   end
 
   def prev_el
-    position ||= 0
+    pos = position || 0
 
-    return nil if position - 1 < 0
+    return nil if pos - 1 < 0
 
-    list[position - 1]
+    list[pos - 1]
   end
 end

@@ -16,8 +16,8 @@ class SubmissionSingleSerializer < SubmissionEachSerializer
   end
 
   def displayed_position
-    position ||= 0
-    position + 1
+    pos = position || 0
+    pos + 1
   end
 
   def status
